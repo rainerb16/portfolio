@@ -25,10 +25,10 @@
         </p>
         <div id="project-links">
           <p id="link">
-            <a href="https://nerdr.ml/">LIVE SITE</a>
+            <a href="https://nerdr.ml/" target="_blank">LIVE SITE</a>
           </p>
           <p id="link">
-            <a href="https://github.com/rainerb16/Vue-Tweeter">VIEW CODE</a>
+            <a href="https://github.com/rainerb16/Vue-Tweeter" target="_blank">VIEW CODE</a>
           </p>
         </div>
       </div>
@@ -45,10 +45,10 @@
         </p>
         <div id="project-links">
           <p id="link">
-            <a href="www.poke8bit.ml">LIVE SITE</a>
+            <a href="https://poke8bit.ml/" target="_blank">LIVE SITE</a>
           </p>
           <p id="link">
-            <a href="https://github.com/rainerb16/w10c-classic-pokemon-battle"
+            <a href="https://github.com/rainerb16/w10c-classic-pokemon-battle" target="_blank"
               >VIEW CODE</a
             >
           </p>
@@ -72,7 +72,7 @@
         </p>
         <div id="project-link-single">
           <p id="link">
-            <a href="https://github.com/rainerb16/W14B-Vue-Rock-Paper-Scissors"
+            <a href="https://github.com/rainerb16/W14B-Vue-Rock-Paper-Scissors" target="_blank"
               >VIEW CODE</a
             >
           </p>
@@ -92,10 +92,10 @@
         </p>
         <div id="project-links">
           <p id="link">
-            <a href="https://kanyerest.ml/">LIVE SITE</a>
+            <a href="https://kanyerest.ml/" target="_blank">LIVE SITE</a>
           </p>
           <p id="link">
-            <a href="https://github.com/rainerb16/kanye-rest-api-generator"
+            <a href="https://github.com/rainerb16/kanye-rest-api-generator" target="_blank"
               >VIEW CODE</a
             >
           </p>
@@ -116,10 +116,10 @@
         </p>
         <div id="project-links">
           <p id="link">
-            <a href="https://pong-retrostyle.ml/">LIVE SITE</a>
+            <a href="https://pong-retrostyle.ml/" target="_blank">LIVE SITE</a>
           </p>
           <p id="link">
-            <a href="https://github.com/rainerb16/Retro-Pong-Game-p5js"
+            <a href="https://github.com/rainerb16/Retro-Pong-Game-p5js" target="_blank"
               >VIEW CODE</a
             >
           </p>
@@ -134,16 +134,16 @@
         <h4>OKOTOKS PIZZA project - Website for local pizza shop</h4>
         <p>
           Okotoks Pizza is the final project of InnoTech College's HTML and
-          CSS/Sass units. This showcase my use of HTML, SCSS, SEO analtyics
+          CSS/Sass units. This showcase my use of HTML, SCSS, SEO analtyics,
           grids and simple animations.<br /><br />
           OKOTOKS PIZZA's website is mobile and desktop compatible.
         </p>
         <div id="project-links">
           <p id="link">
-            <a href="https://straightouttaokotoks.ml">LIVE SITE</a>
+            <a href="https://straightouttaokotoks.ml" target="_blank">LIVE SITE</a>
           </p>
           <p id="link">
-            <a href="https://github.com/rainerb16/Okotoks-Pizza-Project"
+            <a href="https://github.com/rainerb16/Okotoks-Pizza-Project" target="_blank"
               >VIEW CODE</a
             >
           </p>

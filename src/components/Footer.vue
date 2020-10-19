@@ -3,9 +3,9 @@
     <div id="footer-links">
       <p>made by rainer b.</p>
       <p><a href="mailto:hello@rainerb.com">[email]</a></p>
-      <p><a href="https://github.com/rainerb16">[github]</a></p>
-      <p><a href="https://www.linkedin.com/in/rainerbrieger/">[linkedin]</a></p>
-      <p><a href="https://twitter.com/RainerB16">[twitter]</a></p>
+      <p><a href="https://github.com/rainerb16" target="_blank">[github]</a></p>
+      <p><a href="https://www.linkedin.com/in/rainerbrieger/" target="_blank">[linkedin]</a></p>
+      <p><a href="https://twitter.com/RainerB16" target="_blank">[twitter]</a></p>
     </div>
   </div>
 </template>

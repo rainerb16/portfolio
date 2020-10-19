@@ -21,6 +21,7 @@
       id="about-me-container"
       class="animate__animated animate__fadeIn animate__delay-3s	3s"
     >
+      <h4 id="resume"><a href="https://drive.google.com/file/d/1Oj5LULkCKd92yFDNCMrPtOzKpBUKtf9Z/view?usp=sharing" target="_blank" download="Rainer Brieger Resume">Download PDF my Resume</a></h4>
       😄 Pronouns: They/Them<br /><br />
       Hey There! 👋 <br /><br />
 
@@ -51,6 +52,15 @@ export default {
 
 <style lang="scss" scoped>
 // MOBILE
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+#resume {
+  margin-bottom: 5vh;
+}
 #main-content-container {
   display: grid;
   align-items: center;

@@ -20,7 +20,7 @@
       class="animate__animated animate__fadeIn animate__delay-2s	2s"
     >
       <p><a href="mailto:hello@rainerb.com">[email]</a></p>
-      <p><a href="https://www.linkedin.com/in/rainerbrieger/">[linkedin]</a></p>
+      <p><a href="https://www.linkedin.com/in/rainerbrieger/" target="_blank">[linkedin]</a></p>
     </div>
   </div>
 </template>
@@ -32,6 +32,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
 #contact-page {
   display: grid;
   align-items: center;
