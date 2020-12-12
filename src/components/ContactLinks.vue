@@ -55,7 +55,7 @@ a:visited {
   align-items: center;
   justify-items: center;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 20vh;
+  margin-bottom: 25vh;
   margin-top: 3vh;
 }
 

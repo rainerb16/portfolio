@@ -19,13 +19,13 @@
 
     <div
       id="about-me-container"
-      class="animate__animated animate__fadeIn animate__delay-3s	3s"
+      class="animate__animated animate__fadeIn animate__delay-2s	2s"
     >
       <div id="resume">
         <img id="cv" src="../assets/cv.png" alt="Download Resume Icon" />
         <h4>
           <a
-            href="https://drive.google.com/file/d/1Oj5LULkCKd92yFDNCMrPtOzKpBUKtf9Z/view?usp=sharing"
+            href="https://drive.google.com/file/d/1is_Wblbc0lnQ8og60Qms779_oott4rOp/view?usp=sharing"
             target="_blank"
             download="Rainer Brieger Resume"
             >Download PDF of my Resume</a
@@ -35,26 +35,18 @@
       😄 Pronouns: They/Them<br /><br />
       Hey There! 👋 <br /><br />
 
-      My name is Rainer and I am a Full Stack Development Student in Calgary,
-      Canada. I'm currently enrolled in a Full Stack Development Diploma
-      program, graduating in December of 2020. I am a driven, passionate, and
-      curious learner with a willingness to learn. There is something about
-      negative space that is eye catching as I am very much about minimalism.
-      I'm on the search for my first Developer position be it an internship or
-      something more. Please reach out if you are interested in chatting
-      more!<br /><br />
+      My name is Rainer and I'm a Junior Developer from Calgary, Canada. I am a driven, 
+      passionate, and curious learner with a willingness to learn. There is something about 
+      negative space that is eye catching as I am very much about minimalism. I'm a music producer, 
+      DJ and audio engineer, I also co-own an electronic music label called OBSKUR MUSIC. We use 
+      this platform to showcase music from marginalized artists looking to be heard.<br /><br />
 
       Things I do with my spare time include music production, music mastering,
       camping, fishing, and playing old school retro 2d games.<br /><br />
 
-      <!-- 🔭 I’m currently working on: My Full Stack Dev program! I'd like to learn
-      C# in the future and contribute to bigger open source projects.<br /><br />
-      💻 I have experience with: HTML5, CSS, Sass/SCSS, JavaScript, Vue.js,
-      p5.js, Python, Google Cloud Technology, Git, Asana and Figma. -->
-
       <h4
         id="tech-stack"
-        class="animate__animated animate__fadeIn animate__delay-3s	3s"
+        class="animate__animated animate__fadeIn animate__delay-2s	2s"
       >
         <u>Technical Skills</u>
       </h4>
@@ -66,9 +58,10 @@
         <p>- Vue</p>
         <p>- p5.js</p>
         <p>- Python</p>
+        <p>- Flask</p>
         <p>- Google Cloud Platform</p>
         <p>- Apache</p>
-        <p>- Mariadb</p>
+        <p>- MariaDB</p>
         <p>- DBeaver</p>
         <p>- Figma</p>
         <p>- Responsive Web Design</p>
@@ -137,7 +130,7 @@ a:visited {
   align-items: center;
   justify-items: center;
   grid-template-columns: 3fr 3fr;
-  text-align: center;
+  text-align: left;
   border: 1px solid black;
 }
 #resume {

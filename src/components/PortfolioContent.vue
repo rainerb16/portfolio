@@ -12,15 +12,34 @@
       class="animate__animated animate__fadeIn animate__delay-2s	2s"
     >
       <div class="project-item">
+        <h2>LOOP MACHINA - Techno Sequencer</h2>
+        <img src="../assets/loop-thumbnail.png" alt="Thumbnail of LOOP MACHINA" />
+        <h4>LOOP MACHINA - Techno Sequencer with p5.js, Sass</h4>
+        <p>
+          MVP project for InnoTech College. I decide to code a simple drum machine of my favorite genre. There are 9 tracks with their own dedicated sounds. Each track can be manipulated to turn on or off. There is also an animated playhead that moves along with the beat of the kick.<br /><br />
+
+          LOOP MACHINA is compatible only on iPad & Desktop
+        </p>
+        <div id="project-links">
+          <p id="link">
+            <a href="https://loopmachina.tk/" target="_blank">LIVE SITE</a>
+          </p>
+          <p id="link">
+            <a href="https://github.com/rainerb16/MVP-Loop-Machina" target="_blank"
+              >VIEW CODE</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="project-item">
         <h2>NERDR</h2>
         <img src="../assets/nerdr-thumbnail.png" alt="Thumbnail of NERDR" />
-        <h4>NERDR - Front-End of a Simple Twitter like platform with VUE.js</h4>
+        <h4>NERDR - Clone of a Simple Twitter like platform</h4>
         <p>
-          This is part one of a project for InnoTech College. The idea is
-          showcase our <u>Vue</u> skills by coding the front-end of a Twitter
-          like platform. Part two will consist of the back-end. Style wise, I
-          wanted to curate this platform to fit more of my personality rather
-          than just a Twitter clone.<br /><br />
+          The idea is showcase my skills with Vue, Python, Flask and MariaDB/SQL. 
+          Style wise, I wanted to curate this platform to fit more of my personality rather
+          than just a regular Twitter clone. NERDR follow's CRUD principles using an API I created
+          with Python and Flask. My database is managed with DBeaver.<br /><br />
           NERDR is mobile and desktop compatible.
         </p>
         <div id="project-links">
@@ -96,30 +115,6 @@
           </p>
           <p id="link">
             <a href="https://github.com/rainerb16/kanye-rest-api-generator" target="_blank"
-              >VIEW CODE</a
-            >
-          </p>
-        </div>
-      </div>
-      <div class="project-item">
-        <h2>RETRO PONG</h2>
-        <img src="../assets/pong-thumbnail.png" alt="Thumbnail of RETRO PONG" />
-        <h4>RETRO PONG - Atari game clone with p5.js</h4>
-        <p>
-          Classic Atari Pong Game coded for fun! Coded in p5.js! This is not
-          available on mobile (yet). I will need to integrate touch for screen
-          instead of key-up and key-down functions. Would like to customize the
-          game more by adding levels and obstacles for the player.<br /><br /><br />
-          1. Use the up and down arrows to control your paddle.<br /><br />
-          2. Have fun!<br /><br />
-          RETRO PONG is not mobile compatible.
-        </p>
-        <div id="project-links">
-          <p id="link">
-            <a href="https://pong-retrostyle.ml/" target="_blank">LIVE SITE</a>
-          </p>
-          <p id="link">
-            <a href="https://github.com/rainerb16/Retro-Pong-Game-p5js" target="_blank"
               >VIEW CODE</a
             >
           </p>
