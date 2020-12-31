@@ -22,7 +22,7 @@ export default {
 .area {
   background: white;
   width: 90%;
-  height: 5vh;
+  margin-top: 10vh;
 }
 
 .circles {

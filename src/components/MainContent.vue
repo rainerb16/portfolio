@@ -8,7 +8,7 @@
     </h1>
     <div id="main-page-blurb">
       <p class="animate__animated animate__flipInX animate__delay-2s	2s">
-        junior developer
+        full stack developer
       </p>
       <p class="animate__animated animate__flipInX animate__delay-3s	3s">
         music producer
@@ -34,7 +34,9 @@
     />
     <div class="animate__animated animate__fadeIn animate__delay-5s	5s">
       <h4 id="challenge">
-        <a href="https://devtechno.netlify.app/" target="_blank">Dev.Techno Blog</a><br><br>
+        <a href="https://devtechno.netlify.app/" target="_blank"
+          >Dev.Techno Blog</a
+        ><br /><br />
         <a href="https://twitter.com/rainerb16" target="_blank"
           >VIEW MY #100DAYSOFCODE CHALLENGE</a
         >
