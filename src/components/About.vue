@@ -56,6 +56,8 @@
         <p>- Sass</p>
         <p>- JavaScript</p>
         <p>- Vue</p>
+        <p>- React</p>
+        <p>- Contentful</p>
         <p>- p5.js</p>
         <p>- Python</p>
         <p>- Flask</p>
