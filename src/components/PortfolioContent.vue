@@ -6,10 +6,10 @@
     >
       [projects]
     </h2>
-    <h4 id="github-link" class="animate__animated animate__fadeIn animate__delay-2s	2s"><a href="https://github.com/rainerb16">view my GitHub for all projects</a></h4>
+    <h4 id="github-link" class="animate__animated animate__fadeIn animate__delay-1s	1s"><a href="https://github.com/rainerb16" target="_blank">view my GitHub for all projects</a></h4>
     <div
       id="projects-grid"
-      class="animate__animated animate__fadeIn animate__delay-2s	2s"
+      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       <div class="project-item">
         <h2>LOOP MACHINA - Techno Sequencer</h2>

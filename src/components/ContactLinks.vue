@@ -12,12 +12,12 @@
       alt="Photo of Rainer"
       class="animate__animated animate__fadeInLeftBig animate__delay-1s	1s"
     />
-    <h3 class="animate__animated animate__fadeIn animate__delay-2s	2s">
+    <h3 class="animate__animated animate__fadeIn animate__delay-1s	1s">
       please contact me for any inquiries
     </h3>
     <div
       id="contact-links"
-      class="animate__animated animate__fadeIn animate__delay-2s	2s"
+      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       <p><a href="mailto:hello@rainerb.com">[email]</a></p>
       <p><a href="https://www.linkedin.com/in/rainerbrieger/" target="_blank">[linkedin]</a></p>

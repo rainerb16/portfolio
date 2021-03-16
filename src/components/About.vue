@@ -8,7 +8,7 @@
     </h2>
     <div
       id="main-content-container"
-      class="animate__animated animate__fadeIn animate__delay-2s	2s"
+      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       <img
         id="me-photo"
@@ -19,23 +19,12 @@
 
     <div
       id="about-me-container"
-      class="animate__animated animate__fadeIn animate__delay-2s	2s"
+      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
-      <div id="resume">
-        <img id="cv" src="../assets/cv.png" alt="Download Resume Icon" />
-        <h4>
-          <a
-            href="https://drive.google.com/file/d/1is_Wblbc0lnQ8og60Qms779_oott4rOp/view?usp=sharing"
-            target="_blank"
-            download="Rainer Brieger Resume"
-            >Download PDF of my Resume</a
-          >
-        </h4>
-      </div>
       😄 Pronouns: They/Them<br /><br />
       Hey There! 👋 <br /><br />
 
-      My name is Rainer and I'm a Junior Developer from Calgary, Canada. I am a driven, 
+      My name is Rainer and I'm a Developer from Calgary, Canada. I am a driven, 
       passionate, and curious learner with a willingness to learn. There is something about 
       negative space that is eye catching as I am very much about minimalism. I'm a music producer, 
       DJ and audio engineer, I also co-own an electronic music label called OBSKUR MUSIC. We use 
@@ -46,7 +35,7 @@
 
       <h4
         id="tech-stack"
-        class="animate__animated animate__fadeIn animate__delay-2s	2s"
+        class="animate__animated animate__fadeIn animate__delay-1s	1s"
       >
         <u>Technical Skills</u>
       </h4>
@@ -132,7 +121,7 @@ a:visited {
   align-items: center;
   justify-items: center;
   grid-template-columns: 3fr 3fr;
-  text-align: left;
+  text-align: center;
   border: 1px solid black;
 }
 #resume {
