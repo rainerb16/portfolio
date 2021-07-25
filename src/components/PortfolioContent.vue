@@ -22,7 +22,7 @@
         </p>
         <div id="project-links">
           <p id="link">
-            <a href="https://loopmachina.tk/" target="_blank">LIVE SITE</a>
+            <a href="https://loop-machina.netlify.app/" target="_blank">LIVE SITE</a>
           </p>
           <p id="link">
             <a href="https://github.com/rainerb16/MVP-Loop-Machina" target="_blank"
@@ -102,10 +102,7 @@
           with Python and Flask. My database is managed with DBeaver.<br /><br />
           NERDR is mobile and desktop compatible.
         </p>
-        <div id="project-links">
-          <p id="link">
-            <a href="https://nerdr.ml/" target="_blank">LIVE SITE</a>
-          </p>
+        <div id="project-link-single">
           <p id="link">
             <a href="https://github.com/rainerb16/Vue-Tweeter" target="_blank">VIEW CODE</a>
           </p>
@@ -124,7 +121,7 @@
         </p>
         <div id="project-links">
           <p id="link">
-            <a href="https://poke8bit.ml/" target="_blank">LIVE SITE</a>
+            <a href="https://poke8bit.netlify.app/" target="_blank">LIVE SITE</a>
           </p>
           <p id="link">
             <a href="https://github.com/rainerb16/w10c-classic-pokemon-battle" target="_blank"
@@ -171,7 +168,7 @@
         </p>
         <div id="project-links">
           <p id="link">
-            <a href="https://kanyerest.ml/" target="_blank">LIVE SITE</a>
+            <a href="https://kanyerest.netlify.app/" target="_blank">LIVE SITE</a>
           </p>
           <p id="link">
             <a href="https://github.com/rainerb16/kanye-rest-api-generator" target="_blank"
@@ -195,7 +192,7 @@
         </p>
         <div id="project-links">
           <p id="link">
-            <a href="https://straightouttaokotoks.ml" target="_blank">LIVE SITE</a>
+            <a href="https://straightouttaokotoks.netlify.app/" target="_blank">LIVE SITE</a>
           </p>
           <p id="link">
             <a href="https://github.com/rainerb16/Okotoks-Pizza-Project" target="_blank"

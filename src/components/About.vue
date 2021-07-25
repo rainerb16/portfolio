@@ -30,8 +30,8 @@
       DJ and audio engineer, I also co-own an electronic music label called OBSKUR MUSIC. We use 
       this platform to showcase music from marginalized artists looking to be heard.<br /><br />
 
-      Things I do with my spare time include music production, music mastering,
-      camping, fishing, and playing old school retro 2d games.<br /><br />
+      Things I do with my spare time include electronic music production and music mastering.
+      <br /><br />
 
       <h4
         id="tech-stack"

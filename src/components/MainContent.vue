@@ -32,13 +32,13 @@
       alt="Side Profile of Rainer"
       class="animate__animated animate__fadeInLeftBig animate__delay-5s	5s"
     />
-    <div class="animate__animated animate__fadeIn animate__delay-5s	5s">
+    <!-- <div class="animate__animated animate__fadeIn animate__delay-5s	5s">
       <h4 id="challenge">
         <a href="https://devtechno.netlify.app/" target="_blank"
           >VIEW my Dev.Techno Blog</a
         ><br /><br />
       </h4>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -69,6 +69,7 @@ a:hover {
   justify-items: center;
   letter-spacing: 5px;
   margin-top: 10vh;
+  text-align: center;
 }
 p {
   font-family: "Source Code Pro", monospace;
