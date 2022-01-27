@@ -12,9 +12,11 @@
     >
       <img
         id="me-photo"
-        src="../assets/rainer.jpg"
+        src="../assets/rainer-setup.jpeg"
         alt="A portfolio photo of Rainer B."
       />
+
+      <a class="resume" href="https://drive.google.com/file/d/1wTtmAWwmJxwARFOuVNVC2TL2a7OZL2fp/view?usp=sharing" target="_blank">Download my resume 📝 </a>
     </div>
 
     <div
@@ -25,13 +27,15 @@
       Hey There! 👋 <br /><br />
 
       My name is Rainer and I'm a Developer from Calgary, Canada. I am a driven, 
-      passionate, and curious learner with a willingness to learn. There is something about 
-      negative space that is eye catching as I am very much about minimalism. I'm a music producer, 
-      DJ and audio engineer, I also co-own an electronic music label called OBSKUR MUSIC. We use 
-      this platform to showcase music from marginalized artists looking to be heard.<br /><br />
+      passionate, and curious learner with a willingness to learn. I am obsessed with minimalism.
+      I've been diving deep into the Blockchain and Metaverse(s) hoping to contribute as a developer soon.
+      I'm also a music producer, DJ and audio engineer. I've produced both music NFTs and electronic music that 
+      has released worldwide.<br /><br />
 
-      Things I do with my spare time include electronic music production and music mastering.
+      Things I do with my spare time include electronic music production 🎹 🎛️ 🎶 , coding blockchain projects on the side 👾 , and spending time with my amazing partner 💖 .
       <br /><br />
+
+      I am currently 🤓 👨‍💻 : Learning Blockchain Development with Solidity and Smart Contracts, Animation / coding games and digital products for the Metaverse.
 
       <h4
         id="tech-stack"
@@ -44,16 +48,14 @@
         <p>- CSS3</p>
         <p>- Sass</p>
         <p>- JavaScript</p>
-        <p>- Vue</p>
+        <p>- Solidity</p>
         <p>- React</p>
+        <p>- NextJS (Basic Level) </p>
         <p>- Contentful</p>
-        <p>- p5.js</p>
+        <p>- p5.js (Basic Level) </p>
         <p>- Python</p>
-        <p>- Flask</p>
-        <p>- Google Cloud Platform</p>
-        <p>- Apache</p>
-        <p>- MariaDB</p>
-        <p>- DBeaver</p>
+        <p>- Google Cloud Platform (Basic Level) </p>
+        <p>- MariaDB (Basic Level) </p>
         <p>- Figma</p>
         <p>- Responsive Web Design</p>
       </div>
@@ -76,19 +78,16 @@ a:link {
 a:visited {
   color: black;
 }
-#resume {
-  margin-bottom: 5vh;
-}
 #main-content-container {
   display: grid;
   align-items: center;
   justify-items: center;
 }
 #me-photo {
-  width: 45%;
-  border-radius: 50%;
+  width: 50%;
+  //border-radius: 50%;
   box-shadow: 1px 0px 8px black;
-  margin: 3vh;
+  margin: 5vh;
 }
 #sub-title {
   font-family: "Source Code Pro", monospace;
@@ -118,6 +117,8 @@ a:visited {
 }
 #tech-list {
   display: grid;
+  grid-gap: 7px;
+  column-gap: 7px;
   align-items: center;
   justify-items: center;
   grid-template-columns: 3fr 3fr;
@@ -145,7 +146,7 @@ a:visited {
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-columns: 3fr 3fr 3fr;
+    grid-template-columns: 2fr 2fr;
     text-align: center;
     border: 1px solid black;
     padding: 10px;
@@ -155,7 +156,7 @@ a:visited {
 // DESKTOP
 @media only screen and (min-width: 1020px) {
   #me-photo {
-    width: 15%;
+    width: 23%;
   }
   #about-me-container {
     width: 60%;
@@ -165,7 +166,7 @@ a:visited {
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-columns: 3fr 3fr 3fr 3fr;
+    grid-template-columns: 2fr 2fr 2fr 3fr;
     text-align: center;
     border: 1px solid black;
     padding: 10px;

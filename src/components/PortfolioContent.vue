@@ -11,6 +11,21 @@
       id="projects-grid"
       class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
+
+      <div class="project-item">
+        <h2>Crypto XCHG - Crypto Currency Converter with News component</h2>
+        <img src="../assets/crypto-dash.png" alt="Thumbnail of Crypto Dash" />
+        <h4>Crypto XCHG - Crypto Currency Converter with <span class="lang">React</span>, <span class="lang">Axios</span></h4>
+        <p>
+          <span class="lang">Crypto XCHG</span> Simple crypto currency converter with React using Axios and the API from Crypto News Live as well as the API from Alpha Vantage for crypto currency conversion.<br /><br />
+        </p>
+        <div id="project-link-single">
+          <p id="link">
+            <a href="https://github.com/rainerb16/crypto-simple-dash" target="_blank">VIEW CODE</a>
+          </p>
+        </div>
+      </div>
+
       <div class="project-item">
         <h2>LOOP MACHINA - Techno Sequencer</h2>
         <img src="../assets/loop-thumbnail.png" alt="Thumbnail of LOOP MACHINA" />
@@ -26,6 +41,26 @@
           </p>
           <p id="link">
             <a href="https://github.com/rainerb16/MVP-Loop-Machina" target="_blank"
+              >VIEW CODE</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="project-item">
+        <h2>Experiment One - Sin and Cos Waves</h2>
+        <img src="../assets/experiment-one.png" alt="Thumbnail of Experiment One" />
+        <h4>Sin and Cos Wave animations with <span class="lang">p5.js</span></h4>
+        <p>
+          <span class="lang">Experiment One</span> is a small animation experimenting with animations using p5.js and the use of Canvas and Sin and Cos Waves.<br /><br />
+
+          Experiment One can be viewed on mobile devices but it is not optimized
+        </p>
+        <div id="project-links">
+          <p id="link">
+            <a href="https://experimentshapes.netlify.app/" target="_blank">LIVE SITE</a>
+          </p>
+          <p id="link">
+            <a href="https://github.com/rainerb16/experiment-one" target="_blank"
               >VIEW CODE</a
             >
           </p>

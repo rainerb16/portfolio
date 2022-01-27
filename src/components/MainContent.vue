@@ -4,7 +4,7 @@
       id="main-title"
       class="animate__animated animate__jackInTheBox animate__delay-1s	1s"
     >
-      rainer b.
+      [ rainer b. ]
     </h1>
     <div id="main-page-blurb">
       <p class="animate__animated animate__flipInX animate__delay-2s	2s">
@@ -14,7 +14,7 @@
         music producer
       </p>
       <p class="animate__animated animate__flipInX animate__delay-4s	4s">
-        record label owner
+        blockchain / metaverse enthusiast
       </p>
       <p class="animate__animated animate__flipInX animate__delay-5s	5s">
         audiophile
@@ -28,7 +28,7 @@
     </div>
     <img
       id="rainer-two"
-      src="../assets/rainer2.jpg"
+      src="../assets/rainer2.jpeg"
       alt="Side Profile of Rainer"
       class="animate__animated animate__fadeInLeftBig animate__delay-5s	5s"
     />
