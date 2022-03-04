@@ -10,8 +10,8 @@ import ContactPage from "../components/ContactLinks.vue";
 export default {
   name: "main-page",
   components: {
-    ContactPage
-  }
+    ContactPage,
+  },
 };
 </script>
 

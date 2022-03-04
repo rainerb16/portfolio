@@ -20,14 +20,18 @@
       class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       <p><a href="mailto:hello@rainerb.com">[email]</a></p>
-      <p><a href="https://www.linkedin.com/in/rainerbrieger/" target="_blank">[linkedin]</a></p>
+      <p>
+        <a href="https://www.linkedin.com/in/rainerbrieger/" target="_blank"
+          >[linkedin]</a
+        >
+      </p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "contact-page"
+  name: "contact-page",
 };
 </script>
 

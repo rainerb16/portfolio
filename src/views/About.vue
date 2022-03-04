@@ -9,8 +9,8 @@ import AboutContent from "../components/About.vue";
 export default {
   name: "about-page",
   components: {
-    AboutContent
-  }
+    AboutContent,
+  },
 };
 </script>
 

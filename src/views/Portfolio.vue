@@ -10,8 +10,8 @@ import PortfolioContent from "../components/PortfolioContent.vue";
 export default {
   name: "portfolio-page",
   components: {
-    PortfolioContent
-  }
+    PortfolioContent,
+  },
 };
 </script>
 

@@ -11,27 +11,27 @@ const routes = [
   {
     path: "/",
     name: "Main",
-    component: MainPage
+    component: MainPage,
   },
   {
     path: "/about",
     name: "About",
-    component: AboutPage
+    component: AboutPage,
   },
   {
     path: "/portfolio",
     name: "Portfolio",
-    component: PortfolioPage
+    component: PortfolioPage,
   },
   {
     path: "/contact",
     name: "Contact",
-    component: ContactPage
-  }
+    component: ContactPage,
+  },
 ];
 
 const router = new VueRouter({
-  routes
+  routes,
 });
 
 export default router;

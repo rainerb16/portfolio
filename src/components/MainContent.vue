@@ -14,9 +14,6 @@
         music producer
       </p>
       <p class="animate__animated animate__flipInX animate__delay-4s	4s">
-        blockchain / metaverse enthusiast
-      </p>
-      <p class="animate__animated animate__flipInX animate__delay-5s	5s">
         audiophile
       </p>
       <h2
@@ -43,9 +40,8 @@
 </template>
 
 <script>
-
 export default {
-  name: "main-page"
+  name: "main-page",
 };
 </script>
 

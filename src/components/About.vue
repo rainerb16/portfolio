@@ -28,14 +28,12 @@
 
       My name is Rainer and I'm a Developer from Calgary, Canada. I am a driven, 
       passionate, and curious learner with a willingness to learn. I am obsessed with minimalism.
-      I've been diving deep into the Blockchain and Metaverse(s) hoping to contribute as a developer soon.
-      I'm also a music producer, DJ and audio engineer. I've produced both music NFTs and electronic music that 
-      has released worldwide.<br /><br />
+      I've been diving deep into JavaScript, React & NextJS and exploring my career as a JavaScript Developer.
+      I'm also a music producer, DJ and audio engineer. I've produced both music NFTs (blockchain) and electronic music that 
+      has been released worldwide.<br /><br />
 
-      Things I do with my spare time include electronic music production 🎹 🎛️ 🎶 , coding blockchain projects on the side 👾 , and spending time with my amazing partner 💖 .
+      Things I do with my spare time include electronic music production 🎹 🎛️ 🎶 , coding personal projects on the side 👾, and spending time with my amazing partner 💖 .
       <br /><br />
-
-      I am currently 🤓 👨‍💻 : Learning Blockchain Development with Solidity and Smart Contracts, Animation / coding games and digital products for the Metaverse.
 
       <h4
         id="tech-stack"
@@ -48,9 +46,8 @@
         <p>- CSS3</p>
         <p>- Sass</p>
         <p>- JavaScript</p>
-        <p>- Solidity</p>
         <p>- React</p>
-        <p>- NextJS (Basic Level) </p>
+        <p>- NextJS</p>
         <p>- Contentful</p>
         <p>- p5.js (Basic Level) </p>
         <p>- Python</p>
