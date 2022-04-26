@@ -11,7 +11,8 @@
         developer
       </p>
       <p class="animate__animated animate__flipInX animate__delay-3s	3s">
-        music producer
+        music producer / mastering engineer
+        
       </p>
       <p class="animate__animated animate__flipInX animate__delay-4s	4s">
         audiophile

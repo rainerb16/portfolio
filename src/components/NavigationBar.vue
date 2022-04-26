@@ -6,6 +6,13 @@
       <router-link to="/" class="nav-link">[home]</router-link>
       <router-link to="/about" class="nav-link">[about]</router-link>
       <router-link to="/portfolio" class="nav-link">[projects]</router-link>
+      <a
+        href="https://www.klvsaudio.co/"
+        target="_blank"
+        rel="noreferrer"
+        class="nav-link"
+        >[KLVS audio]</a
+      >
       <router-link to="/contact" class="nav-link">[contact]</router-link>
     </div>
   </div>
@@ -34,7 +41,8 @@ a:visited {
 }
 #nav {
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
+  column-gap: 7px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
   align-items: center;
   justify-items: center;
@@ -47,7 +55,7 @@ a:visited {
 @media only screen and (min-width: 768px) {
   #nav {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr 2fr 2fr;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
     font-size: 20px;
   }
   #r-title {
@@ -59,8 +67,9 @@ a:visited {
 // DESKTOP
 @media only screen and (min-width: 1020px) {
   #nav {
-    grid-template-columns: 1fr 3fr 2fr 2fr 2fr 2fr;
-    font-size: 20px;
+    column-gap: normal;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
+    font-size: 18px;
   }
   #r-title {
     font-family: "Abril Fatface", cursive;
@@ -74,7 +83,7 @@ a:visited {
     position: relative;
     overflow: hidden;
     font-size: 18px;
-    padding: 7px;
+    padding: 4px;
   }
   .nav-link:before {
     content: "";
