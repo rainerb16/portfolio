@@ -16,21 +16,19 @@
         alt="A portfolio photo of Rainer B."
       />
 
-      <a class="resume" href="https://drive.google.com/file/d/1wTtmAWwmJxwARFOuVNVC2TL2a7OZL2fp/view?usp=sharing" target="_blank">Download my resume 📝 </a>
+      <a class="resume" href="https://www.dropbox.com/scl/fi/2p9z5lzn8htkdbodvgux8/Rainer_Brieger_Dev_Resume2025.pdf?rlkey=cl0zalnghkyqu96ttxlaec7ew&st=iqhhck20&dl=0" target="_blank">Download my resume 📝 </a>
     </div>
 
     <div
       id="about-me-container"
       class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
-      😄 Pronouns: They/Them<br /><br />
       Hey There! 👋 <br /><br />
 
       My name is Rainer and I'm a Developer from Calgary, Canada. I am a driven, 
       passionate, and curious learner with a willingness to learn. I am obsessed with minimalism.
-      I've been diving deep into JavaScript, React & NextJS and exploring my career as a JavaScript Developer.
-      I'm also a music producer, DJ and audio engineer. I've produced both music NFTs (blockchain) and electronic music that 
-      has been released worldwide.<br /><br />
+      I've been diving deep into JavaScript, React, Vue, and exploring my career as a JavaScript Developer.
+      I'm also a music producer and audio engineer.<br /><br />
 
       Things I do with my spare time include electronic music production 🎹 🎛️ 🎶 , coding personal projects on the side 👾, and spending time with my amazing partner 💖 .
       <br /><br />
@@ -40,19 +38,19 @@
         class="animate__animated animate__fadeIn animate__delay-1s	1s"
       >
         <u>Technical Skills</u>
+        <p>I have experience with:</p>
       </h4>
       <div id="tech-list">
         <p>- HTML5</p>
         <p>- CSS3</p>
         <p>- Sass</p>
+        <p>- Tailwind</p>
         <p>- JavaScript</p>
         <p>- React</p>
-        <p>- NextJS</p>
+        <p>- Vue</p>
         <p>- Contentful</p>
         <p>- p5.js (Basic Level) </p>
-        <p>- Python</p>
         <p>- Google Cloud Platform (Basic Level) </p>
-        <p>- MariaDB (Basic Level) </p>
         <p>- Figma</p>
         <p>- Responsive Web Design</p>
       </div>

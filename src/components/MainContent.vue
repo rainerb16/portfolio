@@ -11,7 +11,7 @@
         developer
       </p>
       <p class="animate__animated animate__flipInX animate__delay-3s	3s">
-        music producer / mastering engineer
+        music producer / audio engineer
         
       </p>
       <p class="animate__animated animate__flipInX animate__delay-4s	4s">
@@ -26,7 +26,7 @@
     </div>
     <img
       id="rainer-two"
-      src="../assets/rainer2.jpeg"
+      src="../assets/rainer-main.png"
       alt="Side Profile of Rainer"
       class="animate__animated animate__fadeInLeftBig animate__delay-5s	5s"
     />
@@ -57,71 +57,78 @@ a:visited {
 a:hover {
   color: maroon;
 }
-
-#main-title {
-  font-family: "Source Code Pro", monospace;
-  font-size: 36px;
-  display: grid;
+.main-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
-  letter-spacing: 5px;
-  margin-top: 10vh;
-  text-align: center;
-}
-p {
-  font-family: "Source Code Pro", monospace;
-  font-size: 14px;
-  display: grid;
-  align-items: center;
-  justify-items: center;
+  height: 75vh;
   margin-bottom: 5vh;
-}
-#creative {
-  color: maroon;
-  font-family: "Source Code Pro", monospace;
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-#main-page-blurb {
-  line-height: 0px;
-  margin-bottom: 10vh;
-}
-#challenge {
-  font-family: "Source Code Pro", monospace;
-  text-align: center;
-}
-#rainer-two {
-  width: 75%;
-  margin-left: 12.5%;
-  border-radius: 7%;
-}
 
-// TABLET
-@media only screen and (min-width: 670px) {
   #main-title {
-    font-size: 42px;
-  }
-  #rainer-two {
-    width: 50%;
-    margin-left: 25%;
+    font-family: "Source Code Pro", monospace;
+    font-size: 24px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    letter-spacing: 5px;
+    margin-top: 10vh;
+    text-align: center;
   }
   p {
-    font-size: 16px;
+    font-family: "Source Code Pro", monospace;
+    font-size: 14px;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 5vh;
+  }
+  #creative {
+    color: maroon;
+    font-family: "Source Code Pro", monospace;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+  #rainer-two {
+    width: 75%;
+    border-radius: 7%;
+  }
+  #main-page-blurb {
+    line-height: 0px;
+    margin-bottom: 5vh;
+  }
+
+  // TABLET
+  @media only screen and (min-width: 670px) {
+    margin-bottom: 10vh;
+
+    #main-title {
+      font-size: 42px;
+    }
+    p {
+      font-size: 16px;
+    }
+    #rainer-two {
+      width: 50%;
+    }
+  }
+
+  // DESKTOP
+  @media only screen and (min-width: 1020px) {
+    margin-bottom: 15vh;
+
+    #main-title {
+      font-size: 50px;
+    }
+    #rainer-two {
+      width: 35%;
+      //margin-left: 37.5%;
+    }
+    p {
+      font-size: 20px;
+    }
   }
 }
 
-// DESKTOP
-@media only screen and (min-width: 1020px) {
-  #main-title {
-    font-size: 50px;
-  }
-  #rainer-two {
-    width: 25%;
-    margin-left: 37.5%;
-  }
-  p {
-    font-size: 20px;
-  }
-}
 </style>

@@ -10,8 +10,8 @@ import MainContent from "../components/MainContent.vue";
 export default {
   name: "main-page",
   components: {
-    MainContent,
-  },
+    MainContent
+  }
 };
 </script>
 

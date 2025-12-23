@@ -160,6 +160,29 @@
       </div>
 
       <div class="project-item">
+        <h2>Personal Website</h2>
+        <img src="../assets/website-screenshot.png" alt="Thumbnail of Personal Website" />
+        <h4>Personal Website - Vue, Sass</h4>
+        <p>
+          <span class="lang">Vue</span> with
+          <span class="lang">Sass</span> <br /><br />
+          Personal website to showcase my portfolio.
+        </p>
+        <div id="project-links">
+          <p id="link">
+            <a href="https://www.rainerb.com" target="_blank"
+              >LIVE SITE</a
+            >
+          </p>
+          <p id="link">
+            <a href="https://github.com/rainerb16/portfolio" target="_blank"
+              >VIEW CODE</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="project-item">
         <h2>Devtechno Blog</h2>
         <img src="../assets/devtechno.png" alt="Thumbnail of Devtechno Blog" />
         <h4>Devtechno Blog - React, Contentful</h4>
@@ -218,11 +241,6 @@
           POKE8BIT is not mobile compatible.
         </p>
         <div id="project-links">
-          <p id="link">
-            <a href="https://poke8bit.netlify.app/" target="_blank"
-              >LIVE SITE</a
-            >
-          </p>
           <p id="link">
             <a
               href="https://github.com/rainerb16/w10c-classic-pokemon-battle"

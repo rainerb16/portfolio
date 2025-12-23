@@ -6,13 +6,6 @@
       <router-link to="/" class="nav-link">[home]</router-link>
       <router-link to="/about" class="nav-link">[about]</router-link>
       <router-link to="/portfolio" class="nav-link">[projects]</router-link>
-      <a
-        href="https://www.klvsaudio.co/"
-        target="_blank"
-        rel="noreferrer"
-        class="nav-link"
-        >[KLVS audio]</a
-      >
       <router-link to="/contact" class="nav-link">[contact]</router-link>
     </div>
   </div>

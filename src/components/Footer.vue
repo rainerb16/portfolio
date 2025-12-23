@@ -9,9 +9,6 @@
           >[linkedin]</a
         >
       </p>
-      <p>
-        <a href="https://twitter.com/RainerB16" target="_blank">[twitter]</a>
-      </p>
     </div>
   </div>
 </template>
@@ -33,7 +30,7 @@ a:visited {
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 5px;
   margin-top: 5vh;
 }
