@@ -16,7 +16,7 @@
         alt="A portfolio photo of Rainer B."
       />
 
-      <a class="resume" href="https://www.dropbox.com/scl/fi/2p9z5lzn8htkdbodvgux8/Rainer_Brieger_Dev_Resume2025.pdf?rlkey=cl0zalnghkyqu96ttxlaec7ew&st=iqhhck20&dl=0" target="_blank">Download my resume 📝 </a>
+      <a class="resume" href="https://www.dropbox.com/scl/fi/k6i29p32iz1dwbnbxl2w0/Rainer_Brieger_Resume2025.pdf?rlkey=6bkgpvtte9ezhyuyw5w6poa0y&st=4e0zo9g0&dl=0" target="_blank">Download my resume 📝 </a>
     </div>
 
     <div
