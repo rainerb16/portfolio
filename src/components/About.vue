@@ -15,8 +15,6 @@
         src="../assets/rainer-setup.jpeg"
         alt="A portfolio photo of Rainer B."
       />
-
-      <a class="resume" href="https://www.dropbox.com/scl/fi/k6i29p32iz1dwbnbxl2w0/Rainer_Brieger_Resume2025.pdf?rlkey=6bkgpvtte9ezhyuyw5w6poa0y&st=4e0zo9g0&dl=0" target="_blank">Download my resume 📝 </a>
     </div>
 
     <div
@@ -32,28 +30,6 @@
 
       Things I do with my spare time include electronic music production 🎹 🎛️ 🎶 , coding personal projects on the side 👾, and spending time with my amazing partner 💖 .
       <br /><br />
-
-      <h4
-        id="tech-stack"
-        class="animate__animated animate__fadeIn animate__delay-1s	1s"
-      >
-        <u>Technical Skills</u>
-        <p>I have experience with:</p>
-      </h4>
-      <div id="tech-list">
-        <p>- HTML5</p>
-        <p>- CSS3</p>
-        <p>- Sass</p>
-        <p>- Tailwind</p>
-        <p>- JavaScript</p>
-        <p>- React</p>
-        <p>- Vue</p>
-        <p>- Contentful</p>
-        <p>- p5.js (Basic Level) </p>
-        <p>- Google Cloud Platform (Basic Level) </p>
-        <p>- Figma</p>
-        <p>- Responsive Web Design</p>
-      </div>
     </div>
   </div>
 </template>
@@ -99,7 +75,6 @@ a:visited {
   display: grid;
   align-items: center;
   justify-items: center;
-  margin: 5vw;
   font-size: 14px;
   text-align: justify;
 }

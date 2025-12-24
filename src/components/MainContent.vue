@@ -7,22 +7,36 @@
       [ rainer b. ]
     </h1>
     <div id="main-page-blurb">
-      <p class="animate__animated animate__flipInX animate__delay-2s	2s">
+      <p class="animate__animated animate__flipInX animate__delay-1s	1s">
         developer
       </p>
-      <p class="animate__animated animate__flipInX animate__delay-3s	3s">
+      <p class="animate__animated animate__flipInX animate__delay-2s	2s">
         music producer / audio engineer
         
       </p>
-      <p class="animate__animated animate__flipInX animate__delay-4s	4s">
+      <p class="animate__animated animate__flipInX animate__delay-3s	3s">
         audiophile
       </p>
       <h2
         id="creative"
-        class="animate__animated animate__zoomInRight animate__delay-5s	5s"
+        class="animate__animated animate__zoomInRight animate__delay-4s	4s"
       >
         creative
       </h2>
+    </div>
+     <div class="actions animate__animated animate__fadeInLeftBig animate__delay-5s	5s">
+      <RouterLink to="/resume" class="btn btn-primary">
+        View Resume
+      </RouterLink>
+
+      <a
+        href="/Rainer_Brieger_Dev_Resume_2025.pdf"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-secondary"
+      >
+        Download PDF
+      </a>
     </div>
     <img
       id="rainer-two"
@@ -58,19 +72,18 @@ a:hover {
   color: maroon;
 }
 .main-page {
+  width: 100%;
+  margin-top: 10vh;
+  margin-bottom: 20vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 75vh;
-  margin-bottom: 5vh;
 
   #main-title {
     font-family: "Source Code Pro", monospace;
     font-size: 24px;
-    display: grid;
-    align-items: center;
-    justify-items: center;
     letter-spacing: 5px;
     margin-top: 10vh;
     text-align: center;
@@ -78,17 +91,14 @@ a:hover {
   p {
     font-family: "Source Code Pro", monospace;
     font-size: 14px;
-    display: grid;
-    align-items: center;
-    justify-items: center;
     margin-bottom: 5vh;
-  }
+    text-align: center;
+}
+
   #creative {
     color: maroon;
     font-family: "Source Code Pro", monospace;
-    display: grid;
-    align-items: center;
-    justify-items: center;
+    text-align: center;
   }
   #rainer-two {
     width: 75%;
@@ -97,6 +107,42 @@ a:hover {
   #main-page-blurb {
     line-height: 0px;
     margin-bottom: 5vh;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+/* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    margin-bottom: 4vh;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+
+    &-primary {
+      border: 1px solid rgba(0, 0, 0, 0.45);
+    }
+
+    &-secondary {
+      border: 1px solid rgba(0, 0, 0, 0.45);
+      //opacity: 0.9;
+    }
+
+    &:hover {
+      border-color: rgba(0, 0, 0, 1);
+    }
   }
 
   // TABLET
