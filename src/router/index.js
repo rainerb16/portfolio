@@ -4,6 +4,7 @@ import MainPage from "../views/Main.vue";
 import PortfolioPage from "../views/Portfolio.vue";
 import ContactPage from "../views/Contact.vue";
 import AboutPage from "../views/About.vue";
+import ResumePage from "../views/Resume.vue";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: "/contact",
     name: "Contact",
     component: ContactPage,
+  },
+  {
+    path: "/resume",
+    name: "Resume",
+    component: ResumePage
   },
 ];
 
