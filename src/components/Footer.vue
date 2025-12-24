@@ -1,15 +1,9 @@
 <template>
-  <div>
-    <div id="footer-links">
-      <p>made by rainer b.</p>
-      <p><a href="mailto:hello@rainerb.com">[email]</a></p>
-      <p><a href="https://github.com/rainerb16" target="_blank">[github]</a></p>
-      <p>
-        <a href="https://www.linkedin.com/in/rainerbrieger/" target="_blank"
-          >[linkedin]</a
-        >
-      </p>
-    </div>
+  <div id="footer-links">
+    <p>made by rainer b.</p>
+    <a href="mailto:hello@rainerb.com">[email]</a>
+    <a href="https://github.com/rainerb16" target="_blank">[github]</a>
+    <a href="https://www.linkedin.com/in/rainerbrieger/" target="_blank">[linkedin]</a>
   </div>
 </template>
 
@@ -27,28 +21,35 @@ a:visited {
   color: black;
 }
 #footer-links {
-  display: grid;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 5px;
+  font-size: 14px;
+  gap: 4px;
   margin-top: 5vh;
+  flex-wrap: wrap; // prevents cutoff on small screens
 }
 p {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 // TABLET
 @media only screen and (min-width: 768px) {
+  #footer-links {
+    gap: 20px;
+  }
   p {
-    font-size: 16px;
+    font-size: 20px;
+  }
+  a {
+  font-size: 18px;
   }
 }
 
 // DESKTOP
-@media only screen and (min-width: 1020px) {
-  p {
-    font-size: 18px;
-  }
-}
+// @media only screen and (min-width: 1020px) {
+//   #footer-links {
+//     gap: 10px;
+//   }
+// }
 </style>

@@ -73,8 +73,8 @@ a:hover {
 }
 .main-page {
   width: 100%;
-  margin-top: 10vh;
-  margin-bottom: 20vh;
+  margin-top: 5vh;
+  margin-bottom: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,12 +85,12 @@ a:hover {
     font-family: "Source Code Pro", monospace;
     font-size: 24px;
     letter-spacing: 5px;
-    margin-top: 10vh;
+    //margin-top: 10vh;
     text-align: center;
   }
   p {
     font-family: "Source Code Pro", monospace;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 5vh;
     text-align: center;
 }
@@ -147,13 +147,15 @@ a:hover {
 
   // TABLET
   @media only screen and (min-width: 670px) {
-    margin-bottom: 10vh;
-
+    .main-page {
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+    }
     #main-title {
       font-size: 42px;
     }
     p {
-      font-size: 16px;
+      font-size: 18px;
     }
     #rainer-two {
       width: 50%;
@@ -162,7 +164,11 @@ a:hover {
 
   // DESKTOP
   @media only screen and (min-width: 1020px) {
-    margin-bottom: 15vh;
+    .main-page {
+      margin-top: 10vh;
+      margin-bottom: 15vh;
+    }
+
 
     #main-title {
       font-size: 50px;

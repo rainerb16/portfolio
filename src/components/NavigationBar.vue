@@ -31,26 +31,26 @@ a:visited {
 #r-title {
   font-family: "Abril Fatface", cursive;
   font-size: 34px;
-  margin: 0 auto;
+  margin: 0;
+  line-height: 1;
 }
 #nav {
-  display: grid;
-  column-gap: 7px;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   width: 100%;
+  padding: 7px 7px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  justify-items: center;
-  min-height: 2vh;
-  color: black;
+  justify-content: center;
+  gap: 4px;
   font-family: "Source Code Pro", monospace;
   font-size: 14px;
 }
 // TABLET
 @media only screen and (min-width: 768px) {
   #nav {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
     font-size: 20px;
+    gap: 20px;
   }
   #r-title {
     font-family: "Abril Fatface", cursive;
@@ -60,11 +60,6 @@ a:visited {
 
 // DESKTOP
 @media only screen and (min-width: 1020px) {
-  #nav {
-    column-gap: normal;
-    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
-    font-size: 18px;
-  }
   #r-title {
     font-family: "Abril Fatface", cursive;
     font-size: 56px;
