@@ -19,6 +19,42 @@
       class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       <div class="project-item">
+        <h2>Tiny Tasks - Lightweight Task Managment App</h2>
+        <img src="../assets/tiny_tasks_screenshot.png" alt="Thumbnail of Tiny Tasks" />
+        <h4>
+          Tiny Tasks with
+          <span class="lang">React</span>, <span class="lang">Node.js</span>, <span class="lang">Express</span>, <span class="lang">Sass</span>, <span class="lang">REST API</span>
+        </h4>
+        <p>
+          <span class="lang">Tiny Tasks</span> Lightweight task management app with a REST API, built to practice real-world frontend–backend integration and deployment.<br /><br />
+          NOTE** Live demo may take up to 60s on first load due to free-tier hosting.
+        </p>
+        <div id="project-links-three">
+          <p id="link">
+            <a href="https://tiny-tasks-rainer.netlify.app/" target="_blank"
+              >LIVE SITE</a
+            >
+          </p>
+          <p id="link">
+            <a
+              href="https://github.com/rainerb16/tiny-tasks-frontend"
+              target="_blank"
+              >VIEW FRONT END CODE</a
+            >
+          </p>
+          <div id="project-link">
+            <p id="link">
+              <a
+                href="https://github.com/rainerb16/tiny-tasks-api"
+                target="_blank"
+                >VIEW BACK END CODE</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item">
         <h2>Crypto XCHG - Crypto Currency Converter with News component</h2>
         <img src="../assets/crypto-dash.png" alt="Thumbnail of Crypto Dash" />
         <h4>
@@ -401,11 +437,20 @@ span {
   align-items: center;
   justify-items: center;
 }
+#project-links-three {
+  margin-bottom: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
 #link {
   border: 1px solid black;
   padding: 7px;
   box-shadow: 3px 0px 7px darkgray;
   cursor: pointer;
+  text-align: center;
 }
 a:link {
   color: black;

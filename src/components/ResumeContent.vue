@@ -149,7 +149,7 @@ export default {
         ],
 
         // Put a PDF in /public/resume.pdf and set this:
-        pdfUrl: "/Rainer_Brieger_Dev_Resume_2025.pdf",
+        pdfUrl: "/Rainer_Brieger_Dev_Resume_1.2_2025.pdf",
         contactUrl: "/#/contact",
 
         summary:
