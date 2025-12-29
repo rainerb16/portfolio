@@ -342,38 +342,6 @@
           </p>
         </div>
       </div>
-      <div class="project-item">
-        <h2>OKOTOKS PIZZA</h2>
-        <img
-          src="../assets/opp-thumbnail.png"
-          alt="Thumbnail of the OKOTOKS PIZZA Website"
-        />
-        <h4>OKOTOKS PIZZA project - Website for local pizza shop</h4>
-        <p>
-          Okotoks Pizza is the final project of InnoTech College's
-          <span class="lang">HTML</span> and
-          <span class="lang">CSS/Sass</span> units. This showcase my use of
-          HTML, <span class="lang">SCSS</span>,
-          <span class="lang">SEO analtyics</span>,
-          <span class="lang">grids</span> and
-          <span class="lang">simple animations</span>.<br /><br />
-          OKOTOKS PIZZA's website is mobile and desktop compatible.
-        </p>
-        <div id="project-links">
-          <p id="link">
-            <a href="https://straightouttaokotoks.netlify.app/" target="_blank"
-              >LIVE SITE</a
-            >
-          </p>
-          <p id="link">
-            <a
-              href="https://github.com/rainerb16/Okotoks-Pizza-Project"
-              target="_blank"
-              >VIEW CODE</a
-            >
-          </p>
-        </div>
-      </div>
     </div>
   </div>
 </template>
