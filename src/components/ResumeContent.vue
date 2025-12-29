@@ -56,8 +56,14 @@
             </h3>
 
             <div class="card-links no-print">
-              <a v-if="p.liveUrl" :href="p.liveUrl" target="_blank" rel="noreferrer">Live</a>
+              <!-- Single repo -->
               <a v-if="p.repoUrl" :href="p.repoUrl" target="_blank" rel="noreferrer">GitHub</a>
+
+              <!-- Multiple repos -->
+              <div class="multiple-repos" v-else-if="p.repoUrls">
+                <a :href="p.repoUrls.frontend" target="_blank" rel="noreferrer">Github Frontend</a>
+                <a :href="p.repoUrls.backend" target="_blank" rel="noreferrer">Github Backend</a>
+              </div>
             </div>
           </div>
 
@@ -131,7 +137,7 @@ export default {
     return {
       resume: {
         name: "Rainer B.",
-        title: "Front-End Developer",
+        title: "Fullstack Developer",
         location: "Calgary, AB",
         email: "hello@rainerb.com",
         phone: "",
@@ -147,16 +153,32 @@ export default {
         contactUrl: "/#/contact",
 
         summary:
-          "Front-end focused developer building clean, responsive interfaces with a strong foundation in JavaScript. Experienced in detail-heavy environments—ownership, clarity, and follow-through carry into UI work.",
+          "Fullstack developer building clean, responsive interfaces with JavaScript and React. Comfortable working with Node.js and Express to build and integrate REST APIs. Background in detail-heavy environments, bringing ownership, clarity, and follow-through into UI and application development.",
 
         skills: [
-          { label: "FRONTEND", items: ["JavaScript (ES6+)", "Vue", "React", "HTML", "CSS"] },
-          { label: "STYLING", items: ["Sass (SCSS)", "Tailwin", "Responsive UI"] },
-          { label: "TOOLS", items: ["Git/GitHub", "Netlify", "VS Code"] },
+          { label: "FRONTEND", items: ["JavaScript (ES6+)", "Vue (Basic)", "React", "HTML", "CSS"] },
+          { label: "BACKEND", items: ["Node.js", "Express"]},
+          { label: "STYLING", items: ["Sass (SCSS)", "Tailwind", "Responsive UI"] },
+          { label: "TOOLS", items: ["Git/GitHub", "Netlify", "Jira", "VS Code"] },
           { label: "STRENGTHS", items: ["Debugging", "Refactoring", "Documentation"] }
         ],
 
         projects: [
+          {
+            name: "Tiny Tasks NOTE: (Live demo may take up to 60s on load due to free-tier hosting)",
+            oneLiner: "Lightweight task management app with a REST API, built to practice real-world frontend–backend integration and deployment.",
+            highlights: [
+              "Designed and built a REST API using Node.js and Express to handle task CRUD operations.",
+              "Developed a separate frontend client that consumes the API via environment-based endpoints.",
+              "Handled loading, empty, and error states to reflect realistic client–server behavior."
+            ],
+            stack: ["JavaScript", "Node.js", "Express", "REST API", "Netlify", "Sass (SCSS)", "Render"],
+            liveUrl: "https://tiny-tasks-rainer.netlify.app/",
+            repoUrls: {
+              frontend: "https://github.com/rainerb16/tiny-tasks-frontend",
+              backend: "https://github.com/rainerb16/tiny-tasks-api"
+            }
+          },
           {
             name: "Portfolio Website",
             oneLiner: "Personal portfolio site built with Vue to present projects, experience, and resume content in a clean, responsive layout.",
@@ -165,7 +187,7 @@ export default {
               "Built reusable Vue components and configured client-side routing for maintainable navigation.",
               "Styled the site using SCSS with a focus on readability, spacing, and responsive behavior."
             ],
-            stack: ["Vue", "Vue Router", "SCSS", "Netlify"],
+            stack: ["Vue", "Vue Router", "Sass (SCSS)", "Netlify"],
             liveUrl: "https://rainerb.com",
             repoUrl: "https://github.com/rainerb16/portfolio"
           },
@@ -180,20 +202,7 @@ export default {
             stack: ["React", "CSS", "Contentful", "Netlify"],
             liveUrl: "https://devtechno.netlify.app/",
             repoUrl: "https://github.com/rainerb16/dev-techno"
-          },
-          {
-            name: "React Widgets - Hooks and State",
-            oneLiner: "Collection of small React widgets demonstrating hooks, state management, and component behavior in isolation.",
-            highlights: [
-              "Built small, focused React components to explore hooks, local state, and component behavior.",
-              "Isolated UI logic to better understand state updates, re-rendering, and data flow.",
-              "Used simple, scoped examples to reinforce debugging and reasoning about component behavior."
-            ],
-            stack: ["React", "CSS", "Netlify"],
-            liveUrl: "https://reactwidgets.netlify.app/",
-            repoUrl: "https://github.com/rainerb16/react-hooks-state-widgets"
           }
-
         ],
 
         experience: [
@@ -384,6 +393,12 @@ $text-muted: 0.75;
   border: 1px solid $border;
   border-radius: $radius;
   padding: 14px 14px 12px;
+}
+
+.multiple-repos {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
 }
 
 .card-top {
