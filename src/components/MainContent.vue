@@ -30,7 +30,7 @@
       </RouterLink>
 
       <a
-        href="/Rainer_Brieger_Dev_Resume_2025.pdf"
+        href="/Rainer_Brieger_Dev_Resume_1.2_2025.pdf"
         target="_blank"
         rel="noopener"
         class="btn btn-secondary"
