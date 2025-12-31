@@ -18,6 +18,42 @@
       id="projects-grid"
       class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
+    <div class="project-item">
+        <h2>Admin List - Admin-style Dashboard</h2>
+        <img src="../assets/dashboard.png" alt="Thumbnail of Admin List" />
+        <h4>
+          Admin List with
+          <span class="lang">React</span>, <span class="lang">Node.js</span>, <span class="lang">Express</span>, <span class="lang">Sass</span>, <span class="lang">REST API</span>
+        </h4>
+        <p>
+          <span class="lang">Admin List</span> is an Admin-style dashboard for viewing, creating, editing, sorting, and managing structured data with a focus on real-world table interactions.<br /><br />
+          NOTE** Live demo may take up to 60s on first load due to free-tier hosting.
+        </p>
+        <div id="project-links-three">
+          <p id="link">
+            <a href="https://admin-list-rainer.netlify.app/" target="_blank"
+              >LIVE SITE</a
+            >
+          </p>
+          <p id="link">
+            <a
+              href="https://github.com/rainerb16/admin-list-frontend"
+              target="_blank"
+              >VIEW FRONT END CODE</a
+            >
+          </p>
+          <div id="project-link">
+            <p id="link">
+              <a
+                href="https://github.com/rainerb16/admin-list-api"
+                target="_blank"
+                >VIEW BACK END CODE</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
       <div class="project-item">
         <h2>Tiny Tasks - Lightweight Task Managment App</h2>
         <img src="../assets/tiny_tasks_screenshot.png" alt="Thumbnail of Tiny Tasks" />
@@ -26,7 +62,7 @@
           <span class="lang">React</span>, <span class="lang">Node.js</span>, <span class="lang">Express</span>, <span class="lang">Sass</span>, <span class="lang">REST API</span>
         </h4>
         <p>
-          <span class="lang">Tiny Tasks</span> Lightweight task management app with a REST API, built to practice real-world frontend–backend integration and deployment.<br /><br />
+          <span class="lang">Tiny Tasks</span> is a lightweight task management app with a REST API, built to practice real-world frontend–backend integration and deployment.<br /><br />
           NOTE** Live demo may take up to 60s on first load due to free-tier hosting.
         </p>
         <div id="project-links-three">

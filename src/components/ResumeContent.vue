@@ -165,18 +165,18 @@ export default {
 
         projects: [
           {
-            name: "Tiny Tasks NOTE: (Live demo may take up to 60s on load due to free-tier hosting)",
-            oneLiner: "Lightweight task management app with a REST API, built to practice real-world frontend–backend integration and deployment.",
+            name: "Admin List NOTE: (Live demo may take up to 60s on load due to free-tier hosting)",
+            oneLiner: "Admin dashboard for viewing, creating, editing, sorting, and managing structured data with common table-based workflows.",
             highlights: [
-              "Designed and built a REST API using Node.js and Express to handle task CRUD operations.",
-              "Developed a separate frontend client that consumes the API via environment-based endpoints.",
-              "Handled loading, empty, and error states to reflect realistic client–server behavior."
+              "Built a data table interface supporting sorting, searching, and pagination to mirror common admin dashboard workflows.",
+              "Implemented a detail view panel for inspecting and updating individual records without losing table context.",
+              "Handled loading, empty, and error states to ensure clear feedback during data-driven interactions."
             ],
             stack: ["JavaScript", "Node.js", "Express", "REST API", "Netlify", "Sass (SCSS)", "Render"],
-            liveUrl: "https://tiny-tasks-rainer.netlify.app/",
+            liveUrl: "https://admin-list-rainer.netlify.app/",
             repoUrls: {
-              frontend: "https://github.com/rainerb16/tiny-tasks-frontend",
-              backend: "https://github.com/rainerb16/tiny-tasks-api"
+              frontend: "https://github.com/rainerb16/admin-list-frontend",
+              backend: "https://github.com/rainerb16/admin-list-api"
             }
           },
           {
