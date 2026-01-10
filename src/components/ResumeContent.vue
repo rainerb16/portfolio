@@ -149,34 +149,67 @@ export default {
         ],
 
         // Put a PDF in /public/resume.pdf and set this:
-        pdfUrl: "/Rainer_Brieger_Dev_Resume_1.2_2025.pdf",
+        pdfUrl: "/Rainer_Brieger_Dev_Resume_1_4_2025.pdf",
         contactUrl: "/#/contact",
 
         summary:
-          "Fullstack developer building clean, responsive interfaces with JavaScript and React. Comfortable working with Node.js and Express to build and integrate REST APIs. Background in detail-heavy environments, bringing ownership, clarity, and follow-through into UI and application development.",
+          "Full-stack developer focused on building clean, responsive web applications with JavaScript and React. Works across the stack with Node.js, Express, PostgreSQL, and REST APIs, and has experience deploying applications with CI/CD pipelines. Brings a background in detail-driven environments, emphasizing ownership, clarity, and reliable execution.",
 
         skills: [
-          { label: "FRONTEND", items: ["JavaScript (ES6+)", "Vue (Basic)", "React", "HTML", "CSS"] },
-          { label: "BACKEND", items: ["Node.js", "Express"]},
-          { label: "STYLING", items: ["Sass (SCSS)", "Tailwind", "Responsive UI"] },
-          { label: "TOOLS", items: ["Git/GitHub", "Netlify", "Jira", "VS Code"] },
-          { label: "STRENGTHS", items: ["Debugging", "Refactoring", "Documentation"] }
+          {
+            label: "FRONTEND",
+            items: ["JavaScript (ES6+)", "React", "HTML5", "CSS3"]
+          },
+          {
+            label: "BACKEND",
+            items: ["Node.js", "Express", "REST APIs", "CRUD Operations"]
+          },
+          {
+            label: "DATABASES",
+            items: ["PostgreSQL", "SQL"]
+          },
+          {
+            label: "STYLING",
+            items: ["Sass (SCSS)", "Tailwind CSS", "Responsive UI"]
+          },
+          {
+            label: "DEVOPS & DEPLOYMENT",
+            items: ["CI/CD Pipelines", "Environment Variables", "Netlify", "Render"]
+          },
+          {
+            label: "TOOLS",
+            items: ["Git", "GitHub", "VS Code", "Browser DevTools", "Jira"]
+          },
+          {
+            label: "STRENGTHS",
+            items: ["Debugging", "Refactoring", "Clear Documentation"]
+          }
         ],
-
         projects: [
           {
-            name: "Admin List NOTE: (Live demo may take up to 60s on load due to free-tier hosting)",
-            oneLiner: "Admin dashboard for viewing, creating, editing, sorting, and managing structured data with common table-based workflows.",
+            name: "Inventory Management App",
+            oneLiner: "Full-stack inventory management dashboard with authenticated access, relational data storage, and admin workflows.",
             highlights: [
-              "Built a data table interface supporting sorting, searching, and pagination to mirror common admin dashboard workflows.",
-              "Implemented a detail view panel for inspecting and updating individual records without losing table context.",
-              "Handled loading, empty, and error states to ensure clear feedback during data-driven interactions."
+              "Built a full-stack inventory system with a React frontend and Node.js/Express API backed by PostgreSQL.",
+              "Implemented RESTful CRUD endpoints with server-side validation and relational database queries.",
+              "Added session-based authentication with protected routes for authenticated users.",
+              "Developed a data table interface with sorting, filtering, pagination, and responsive UI states.",
+              "Handled loading, empty, and error states to ensure clarity during async data operations.",
+              "Deployed frontend and backend separately with environment-based configuration and CI/CD pipelines."
             ],
-            stack: ["JavaScript", "Node.js", "Express", "REST API", "Netlify", "Sass (SCSS)", "Render"],
-            liveUrl: "https://admin-list-rainer.netlify.app/",
+            stack: [
+              "JavaScript",
+              "React",
+              "Node.js",
+              "Express",
+              "PostgreSQL",
+              "REST APIs",
+              "CI/CD",
+              "Sass (SCSS)"
+            ],
             repoUrls: {
-              frontend: "https://github.com/rainerb16/admin-list-frontend",
-              backend: "https://github.com/rainerb16/admin-list-api"
+              frontend: "https://github.com/rainerb16/inventory-web",
+              backend: "https://github.com/rainerb16/inventory-api"
             }
           },
           {
