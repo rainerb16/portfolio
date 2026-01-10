@@ -18,6 +18,36 @@
       id="projects-grid"
       class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
+
+    <div class="project-item">
+        <h2>Inventory Management App</h2>
+        <img src="../assets/inventory-app.png" alt="Thumbnail of Inventory App" />
+        <h4>
+          Inventory Management App with
+          <span class="lang">React</span>, <span class="lang">Node.js</span>, <span class="lang">Express</span>, <span class="lang">Sass</span>, <span class="lang">REST APIs</span>, <span class="lang">PostgreSQL</span>, <span class="lang">CI/CD</span>
+        </h4>
+        <p>
+          Fullstack <span class="lang">inventory dashboard</span> CRUD dashboard built to mirror real internal tools used by teams. It's built with React, Node/Express, and PostgreSQL, featuring authentication, CRUD workflows, and CI/CD-based deployments.
+        <div id="project-links">
+          <p id="link">
+            <a
+              href="https://github.com/rainerb16/inventory-web"
+              target="_blank"
+              >VIEW FRONT END CODE</a
+            >
+          </p>
+          <div id="project-link">
+            <p id="link">
+              <a
+                href="https://github.com/rainerb16/inventory-api"
+                target="_blank"
+                >VIEW BACK END CODE</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
     <div class="project-item">
         <h2>Admin List - Admin-style Dashboard</h2>
         <img src="../assets/dashboard.png" alt="Thumbnail of Admin List" />
