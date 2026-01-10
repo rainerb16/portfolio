@@ -11,7 +11,7 @@
       class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       <a href="https://github.com/rainerb16" target="_blank"
-        >view my GitHub for all projects</a
+        >view my GitHub for all projects here</a
       >
     </h4>
     <div

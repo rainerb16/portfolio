@@ -260,10 +260,10 @@ export default {
 
         education: [
           {
-            label: "Web Development Diploma",
+            label: "Fullstack Development Diploma",
             dates: "Innotech College",
             detail:
-              "Completed focused training in frontend web development, emphasizing practical implementation and debugging.",
+              "Completed focused training in fullstack development, emphasizing practical implementation and debugging.",
             bullets: [
               "Built responsive interfaces using HTML, CSS, Sass, JavaScript, and Vue.",
               "Developed component-based UIs and practiced debugging and refactoring workflows.",
@@ -283,7 +283,7 @@ export default {
           }
         ],
 
-        lastUpdated: "Dec 2025"
+        lastUpdated: "January 2026"
       }
     };
   },

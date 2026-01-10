@@ -23,12 +23,11 @@
     >
       Hey There! 👋 <br /><br />
 
-      My name is Rainer and I'm a Developer from Calgary, Canada. I am a driven, 
-      passionate, and curious learner with a willingness to learn. I am obsessed with minimalism.
-      I've been diving deep into JavaScript, React, Vue, and exploring my career as a JavaScript Developer.
-      I'm also a music producer and audio engineer.<br /><br />
+      My name is Rainer, and I’m a full-stack developer based in Calgary, Canada. I enjoy building clean, minimal web applications with JavaScript and React, and working across the stack with Node.js, Express, and PostgreSQL. I value clarity, thoughtful design, and shipping things that work.
 
-      Things I do with my spare time include electronic music production 🎹 🎛️ 🎶 , coding personal projects on the side 👾, and spending time with my amazing partner 💖 .
+Alongside development, I’m also a music producer and audio engineer — a background that shapes how I approach problem-solving, attention to detail, and creative execution.<br /><br />
+
+      Things I do with my spare time include electronic music production 🎹 🎛️ 🎶 and coding personal projects on the side 👾.
       <br /><br />
     </div>
   </div>
