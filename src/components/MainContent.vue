@@ -8,7 +8,7 @@
     </h1>
     <div id="main-page-blurb">
       <p class="animate__animated animate__flipInX animate__delay-1s	1s">
-        developer
+        fullstack developer
       </p>
       <p class="animate__animated animate__flipInX animate__delay-2s	2s">
         music producer / audio engineer
@@ -30,7 +30,7 @@
       </RouterLink>
 
       <a
-        href="/Rainer_Brieger_Dev_Resume_1.2_2025.pdf"
+        href="/Rainer_Brieger_Dev_Resume_1_4_2025.pdf"
         target="_blank"
         rel="noopener"
         class="btn btn-secondary"
