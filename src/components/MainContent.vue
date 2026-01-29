@@ -2,7 +2,7 @@
   <div class="main-page">
     <h1
       id="main-title"
-      class="animate__animated animate__jackInTheBox animate__delay-1s	1s"
+      class="animate__animated animate__fadeInDownBig"
     >
       [ rainer b. ]
     </h1>
@@ -11,11 +11,11 @@
         fullstack developer
       </p>
       <p class="animate__animated animate__flipInX animate__delay-2s	2s">
-        music producer / audio engineer
+        technical writer
         
       </p>
       <p class="animate__animated animate__flipInX animate__delay-3s	3s">
-        audiophile
+        music producer / audio engineer
       </p>
       <h2
         id="creative"
@@ -25,17 +25,13 @@
       </h2>
     </div>
      <div class="actions animate__animated animate__fadeInLeftBig animate__delay-5s	5s">
-      <RouterLink to="/resume" class="btn btn-primary">
-        View Resume
-      </RouterLink>
-
       <a
-        href="/Rainer_Brieger_Dev_Resume_1_4_2025.pdf"
+        href="/Rainer_Brieger_Resume_2026.pdf"
         target="_blank"
         rel="noopener"
         class="btn btn-secondary"
       >
-        Download PDF
+        Download Resume
       </a>
     </div>
     <img

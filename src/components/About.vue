@@ -2,13 +2,11 @@
   <div class="main-page">
     <h2
       id="sub-title"
-      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       [about me]
     </h2>
     <div
       id="main-content-container"
-      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       <img
         id="me-photo"
@@ -19,15 +17,14 @@
 
     <div
       id="about-me-container"
-      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       Hey There! 👋 <br /><br />
 
-      My name is Rainer, and I’m a full-stack developer based in Calgary, Canada. I enjoy building clean, minimal web applications with JavaScript and React, and working across the stack with Node.js, Express, and PostgreSQL. I value clarity, thoughtful design, and shipping things that work.
-
-Alongside development, I’m also a music producer and audio engineer — a background that shapes how I approach problem-solving, attention to detail, and creative execution.<br /><br />
-
-      Things I do with my spare time include electronic music production 🎹 🎛️ 🎶 and coding personal projects on the side 👾.
+      My name is Rainer, and I’m a Fullstack Developer and Technical Writer based in Calgary, Canada. I enjoy building clean, minimal web applications with JavaScript and React, and working across the stack with Node.js, Express, and PostgreSQL. I value clarity, thoughtful design, and shipping things that work.
+<br /><br />
+Beyond writing code, I am passionate about Technical Communication; translating complex systems into clear, scannable documentation that helps developers and users succeed. Alongside development, I’m also a music producer and audio engineer — a background that shapes how I approach problem-solving, attention to detail, and creative execution.
+<br/><br />
+Things I do with my spare time include electronic music production 🎹 🎛️ 🎶 and coding personal projects on the side 👾.
       <br /><br />
     </div>
   </div>

@@ -2,13 +2,11 @@
   <div id="portfolio-page">
     <h2
       id="sub-title"
-      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       [projects]
     </h2>
     <h4
       id="github-link"
-      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       <a href="https://github.com/rainerb16" target="_blank"
         >view my GitHub for all projects here</a
@@ -16,7 +14,6 @@
     </h4>
     <div
       id="projects-grid"
-      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
 
     <div class="project-item">

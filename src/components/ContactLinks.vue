@@ -2,7 +2,6 @@
   <div id="contact-page">
     <h2
       id="sub-title"
-      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       [contact]
     </h2>
@@ -10,14 +9,12 @@
       id="rainer-photo"
       src="../assets/rainer3.jpg"
       alt="Photo of Rainer"
-      class="animate__animated animate__fadeInLeftBig animate__delay-1s	1s"
     />
-    <h3 class="animate__animated animate__fadeIn animate__delay-1s	1s">
+    <h3>
       please contact me for any inquiries
     </h3>
     <div
       id="contact-links"
-      class="animate__animated animate__fadeIn animate__delay-1s	1s"
     >
       <p><a href="mailto:hello@rainerb.com">[email]</a></p>
       <p>

@@ -5,8 +5,9 @@
       <span></span>
       <router-link to="/" class="nav-link">[home]</router-link>
       <router-link to="/portfolio" class="nav-link">[portfolio]</router-link>
+      <router-link to="/writing" class="nav-link">[technical writing]</router-link>
       <router-link to="/about" class="nav-link">[about]</router-link>
-      <router-link to="/resume" class="nav-link">[resume]</router-link>
+      <!-- <router-link to="/resume" class="nav-link">[resume]</router-link> -->
       <router-link to="/contact" class="nav-link">[contact]</router-link>
     </div>
   </div>
