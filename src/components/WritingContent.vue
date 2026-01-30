@@ -1,6 +1,7 @@
 <template>
   <div class="writing-portfolio">
     <h1 class="header">Technical Writing Portfolio</h1>
+    <a class="medium-link" href="https://medium.com/@rainerbrieger" target="_blank" rel="noopener">[Read more on Medium here]</a>
     <nav class="doc-tabs">
       <button @click="selectedDoc = 'api'" :class="{ active: selectedDoc === 'api' }">Backend API</button>
       <button @click="selectedDoc = 'ui'" :class="{ active: selectedDoc === 'ui' }">Frontend UI</button>
@@ -42,6 +43,25 @@ export default {
   text-align: center;
   margin: 5vh 1rem; // Added side margin for mobile headers
 }
+
+.medium-link {
+  text-align: center;
+  margin: 5vh 1rem; // Added side margin for mobile headers
+  display: block;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: #800000;
+    }
+  }
 
 .doc-tabs {
   display: flex;
