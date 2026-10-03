@@ -1,0 +1,337 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Diagram = CollectionEntry<'work'>['data']['diagram'];
+type Node = Diagram['nodes'][number];
+type Side = 'top' | 'right' | 'bottom' | 'left';
+
+interface Props {
+  diagram: Diagram;
+  id: string;
+}
+
+const { diagram, id } = Astro.props;
+const NODE_W = 168;
+const NODE_H = 80;
+const byId = new Map(diagram.nodes.map((n) => [n.id, n]));
+const node = (nodeId: string) => {
+  const n = byId.get(nodeId);
+  if (!n) throw new Error(`Diagram ${id}: unknown node "${nodeId}"`);
+  return n;
+};
+
+const anchor = (n: Node, side: Side) => {
+  switch (side) {
+    case 'top':
+      return { x: n.x + NODE_W / 2, y: n.y };
+    case 'bottom':
+      return { x: n.x + NODE_W / 2, y: n.y + NODE_H };
+    case 'left':
+      return { x: n.x, y: n.y + NODE_H / 2 };
+    case 'right':
+      return { x: n.x + NODE_W, y: n.y + NODE_H / 2 };
+  }
+};
+
+// Straight line, or one bend: vertical-first when leaving a top/bottom edge, otherwise horizontal-first.
+const edges = diagram.edges.map((e) => {
+  const a = anchor(node(e.from), e.fromSide);
+  const b = anchor(node(e.to), e.toSide);
+  const verticalFirst = e.fromSide === 'top' || e.fromSide === 'bottom';
+  const bend = a.x === b.x || a.y === b.y ? null : verticalFirst ? { x: a.x, y: b.y } : { x: b.x, y: a.y };
+  const points = bend ? [a, bend, b] : [a, b];
+  const first = { from: points[0], to: points[1] };
+  const vertical = first.from.x === first.to.x;
+  const labelPos = e.label
+    ? vertical
+      ? { x: first.from.x + 12, y: (first.from.y + first.to.y) / 2 + 4, anchor: 'start' }
+      : { x: (first.from.x + first.to.x) / 2, y: first.from.y - 12, anchor: 'middle' }
+    : null;
+  return { ...e, d: points.map((p, i) => `${i ? 'L' : 'M'} ${p.x} ${p.y}`).join(' '), labelPos };
+});
+
+// Phone version: the main chain top to bottom, with each side node listed under the first chain node it connects to.
+const chainSet = new Set(diagram.chain);
+const placed = new Set<string>();
+const vertical = diagram.chain.map((chainId) => {
+  const extras = diagram.edges
+    .filter((e) => e.from === chainId || e.to === chainId)
+    .map((e) => (e.from === chainId ? e.to : e.from))
+    .filter((other) => !chainSet.has(other) && !placed.has(other))
+    .map((other) => {
+      placed.add(other);
+      return node(other);
+    });
+  return { node: node(chainId), extras };
+});
+
+const description =
+  `Diagram: ${diagram.chain.map((c) => node(c).title).join(', then ')}.` +
+  vertical
+    .flatMap((v) => v.extras.map((x) => ` ${x.title} (${x.sub}) connects to ${v.node.title}.`))
+    .join('');
+---
+
+<figure class="diagram">
+  <div class="wide" tabindex="0" role="region" aria-label="Architecture diagram, scrolls sideways">
+    <svg
+      viewBox={`0 0 ${diagram.width} ${diagram.height}`}
+      width={diagram.width}
+      height={diagram.height}
+      role="img"
+      aria-label={description}
+      data-diagram
+    >
+      <defs>
+        {(['main', 'side', 'dashed'] as const).map((kind) => (
+          <marker
+            id={`${id}-head-${kind}`}
+            viewBox="0 0 10 10"
+            refX="8"
+            refY="5"
+            markerWidth="7"
+            markerHeight="7"
+            orient="auto-start-reverse"
+          >
+            <path d="M0 0 L10 5 L0 10 z" class={`head head--${kind}`} />
+          </marker>
+        ))}
+      </defs>
+      {diagram.bands.map((band) => (
+        <g class="band">
+          <rect x={band.x} y={band.y} width={band.w} height={band.h} rx="16" />
+          <text x={band.x + 8} y={band.y - 10}>
+            {band.label}
+          </text>
+        </g>
+      ))}
+      {edges.map((e) => (
+        <g class={`edge edge--${e.kind}`} data-edge>
+          <path d={e.d} marker-end={`url(#${id}-head-${e.kind})`} />
+          {e.label && e.labelPos && (
+            <text x={e.labelPos.x} y={e.labelPos.y} text-anchor={e.labelPos.anchor}>
+              {e.label}
+            </text>
+          )}
+        </g>
+      ))}
+      {diagram.nodes.map((n) => (
+        <g class={`node node--${n.variant}`} data-node>
+          <rect x={n.x} y={n.y} width={NODE_W} height={NODE_H} rx="12" />
+          <foreignObject x={n.x} y={n.y} width={NODE_W} height={NODE_H}>
+            <div class="node-text">
+              <strong>{n.title}</strong>
+              <span>{n.sub}</span>
+            </div>
+          </foreignObject>
+        </g>
+      ))}
+    </svg>
+  </div>
+  <p class="hint mono" aria-hidden="true">
+    Scroll sideways to see the full diagram →
+  </p>
+
+  <ol class="vertical" aria-label="Architecture diagram">
+    {vertical.map((v) => (
+      <li>
+        <div class:list={['vnode', `node--${v.node.variant}`]}>
+          <strong>{v.node.title}</strong>
+          <span>{v.node.sub}</span>
+        </div>
+        {v.extras.length > 0 && (
+          <ul class="extras">
+            {v.extras.map((x) => (
+              <li>
+                <strong>{x.title}</strong> · {x.sub}
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ol>
+</figure>
+
+<style>
+  .diagram {
+    margin: 0;
+  }
+
+  .wide {
+    overflow-x: auto;
+    border: 1px solid var(--line-2);
+    border-radius: 20px;
+    background-color: var(--bg-raised);
+    background-image: radial-gradient(var(--line) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    min-width: 960px;
+    height: auto;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  .band rect {
+    fill: rgb(99 199 255 / 0.04);
+    stroke: var(--line-3);
+    stroke-dasharray: 6 6;
+  }
+
+  .band text,
+  .edge text {
+    fill: var(--muted);
+    font-family: var(--font-mono);
+    font-size: 12px;
+  }
+
+  .edge path {
+    fill: none;
+    stroke: #5b6a86;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .edge--main path {
+    stroke: var(--coral);
+  }
+
+  .edge--dashed path {
+    stroke-dasharray: 6 6;
+  }
+
+  .head {
+    fill: #5b6a86;
+  }
+
+  .head--main {
+    fill: var(--coral);
+  }
+
+  .node rect {
+    fill: var(--surface);
+    stroke: var(--line-strong);
+  }
+
+  .node--dashed rect {
+    stroke-dasharray: 5 5;
+  }
+
+  .node--highlight rect {
+    fill: var(--blue-bg);
+    stroke: var(--blue);
+  }
+
+  .node-text,
+  .vnode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 8px;
+    text-align: center;
+    line-height: 1.35;
+    color: var(--text);
+  }
+
+  .node-text span,
+  .vnode span {
+    color: var(--muted);
+  }
+
+  .node--highlight .node-text span,
+  .vnode.node--highlight span {
+    color: var(--blue-soft);
+  }
+
+  .hint {
+    display: none;
+    margin-top: 10px;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  .vertical {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (max-width: 1180px) {
+    .hint {
+      display: block;
+    }
+
+    .wide {
+      mask-image: linear-gradient(90deg, #000 82%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, #000 82%, transparent);
+    }
+  }
+
+  @media (max-width: 720px) {
+    .wide,
+    .hint {
+      display: none;
+    }
+
+    .vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    .vertical > li {
+      position: relative;
+    }
+
+    .vertical > li + li::before {
+      content: '↓';
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--coral);
+      font-size: 1.125rem;
+    }
+
+    .vnode {
+      min-height: 72px;
+      border: 1px solid var(--line-strong);
+      border-radius: 12px;
+      background: var(--surface);
+    }
+
+    .vnode.node--highlight {
+      border-color: var(--blue);
+      background: var(--blue-bg);
+    }
+
+    .vnode.node--dashed {
+      border-style: dashed;
+    }
+
+    .extras {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin: 10px 0 0 16px;
+      padding: 0 0 0 14px;
+      border-left: 1px dashed var(--line-strong);
+      list-style: none;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .extras strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+  }
+</style>

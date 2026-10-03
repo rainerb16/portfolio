@@ -1,0 +1,339 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArchDiagram from '../../components/ArchDiagram.astro';
+
+export const getStaticPaths = (async () => {
+  const work = await getCollection('work');
+  return work.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  entry: CollectionEntry<'work'>;
+}
+
+const { entry } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+
+const meta = [
+  { label: 'MY ROLE', value: data.meta.role },
+  { label: 'SCOPE', value: data.meta.scope },
+  { label: 'STACK', value: data.meta.stack },
+  { label: 'STATUS', value: data.meta.status },
+  ...(data.meta.result ? [{ label: 'RESULT', value: data.meta.result }] : []),
+];
+---
+
+<BaseLayout
+  title={`${data.title} · Rainer B.`}
+  description={data.summary}
+  ogImage={`/og/${entry.id}.png`}
+  footerNote="anonymised: design shown, no code or company data"
+>
+  <section class="intro">
+    <div class="container stack gap-28">
+      <p class="eyebrow" data-hero>
+        ARCHITECTURE CASE STUDY · ANONYMISED
+      </p>
+      <h1 data-hero>{data.title}</h1>
+      <p class="lead summary" data-hero>
+        {data.summary}
+      </p>
+      <dl class="meta" data-hero>
+        {meta.map((item) => (
+          <div>
+            <dt class="mono">{item.label}</dt>
+            <dd>{item.value}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="problem">
+    <div class="container split">
+      <h2 id="problem" data-reveal>
+        The problem
+      </h2>
+      <div class="prose" data-reveal>
+        <Content />
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="design">
+    <div class="container stack gap-32">
+      <div class="block-head" data-reveal>
+        <h2 id="design">The design</h2>
+        <p class="muted">{data.designCaption}</p>
+      </div>
+      <div data-reveal>
+        <ArchDiagram diagram={data.diagram} id={entry.id} />
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="decisions">
+    <div class="container stack gap-32">
+      <h2 id="decisions" data-reveal>
+        Key decisions
+      </h2>
+      <ol class="card-grid decisions">
+        {data.decisions.map((d, i) => (
+          <li class="card decision" data-reveal>
+            <span class="mono num" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <h3>{d.title}</h3>
+            <p class="muted">{d.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="outcome">
+    <div class="container split">
+      <h2 id="outcome" data-reveal>
+        Outcome
+      </h2>
+      <ul class="outcomes" data-reveal>
+        {data.outcomes.map((o) => (
+          <li>{o}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="block block--last" aria-labelledby="azure">
+    <div class="container stack gap-28">
+      <div class="stack gap-12 azure-head" data-reveal>
+        <p class="eyebrow eyebrow--blue">WHAT I'M LEARNING</p>
+        <h2 id="azure">How it could look on Azure</h2>
+        <p class="muted">{data.azure.intro}</p>
+      </div>
+      <table class="azure" data-reveal>
+        <caption class="sr-only">Current setup and the Azure service it could map to</caption>
+        <thead class="sr-only">
+          <tr>
+            <th scope="col">Today</th>
+            <th scope="col">On Azure</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.azure.rows.map((row) => (
+            <tr>
+              <td class="muted">{row.now}</td>
+              <td>{row.azure}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <nav class="pager" aria-label="Case studies" data-reveal>
+        <a class="textlink textlink--tap" href="/#work">
+          <span aria-hidden="true">←&nbsp;</span>Back to all work
+        </a>
+        <a class="textlink textlink--tap" href={`/work/${data.next}`}>
+          Next: {data.nextLabel}
+          <span aria-hidden="true">&nbsp;→</span>
+        </a>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .gap-12 {
+    gap: 12px;
+  }
+  .gap-28 {
+    gap: 28px;
+  }
+  .gap-32 {
+    gap: 32px;
+  }
+
+  .intro {
+    padding-block: clamp(72px, 9vw, 120px) 56px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  h1 {
+    max-width: 960px;
+    font-size: clamp(2.375rem, 5.6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+  }
+
+  .summary {
+    max-width: 720px;
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 1px;
+    margin: 16px 0 0;
+    overflow: hidden;
+    background: var(--line-2);
+    border: 1px solid var(--line-2);
+    border-radius: 16px;
+  }
+
+  .meta div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px 22px;
+    background: var(--bg-raised);
+  }
+
+  .meta dt {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .meta dd {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .block {
+    padding-block: 72px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .block--last {
+    border-bottom: 0;
+    padding-bottom: 96px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .split {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 72px;
+  }
+
+  .split > h2 {
+    flex: 1 1 240px;
+  }
+
+  .prose,
+  .outcomes {
+    flex: 999 1 520px;
+    max-width: 720px;
+    color: var(--text-2);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  .prose :global(p + p) {
+    margin-top: 16px;
+  }
+
+  .outcomes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  .block-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .block-head p {
+    max-width: 480px;
+  }
+
+  .decisions {
+    --card-min: 260px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .decision {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 26px;
+  }
+
+  .num {
+    font-size: 0.75rem;
+    color: var(--coral);
+  }
+
+  .decision h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .decision p {
+    font-size: 0.9375rem;
+  }
+
+  .azure-head {
+    max-width: 720px;
+  }
+
+  .azure {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--line-2);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .azure td {
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--line-2);
+    vertical-align: top;
+  }
+
+  .azure td:last-child {
+    font-weight: 500;
+  }
+
+  .azure tr:last-child td {
+    border-bottom: 0;
+  }
+
+  @media (max-width: 640px) {
+    .azure,
+    .azure tbody,
+    .azure tr,
+    .azure td {
+      display: block;
+    }
+
+    .azure td:first-child {
+      padding-bottom: 4px;
+      border-bottom: 0;
+    }
+  }
+
+  .pager {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 24px;
+    font-weight: 600;
+  }
+</style>

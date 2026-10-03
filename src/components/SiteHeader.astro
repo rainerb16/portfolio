@@ -1,0 +1,99 @@
+---
+import Logo from './Logo.astro';
+
+const links = [
+  { href: '/#approach', label: 'approach' },
+  { href: '/#work', label: 'work' },
+  { href: '/#about', label: 'about' },
+  { href: '/#elsewhere', label: 'elsewhere' },
+];
+---
+
+<header class="site-header">
+  <nav class="container nav" aria-label="Primary">
+    <a class="home" href="/" aria-label="Rainer B., home">
+      <Logo size={30} />
+    </a>
+    <ul class="links">
+      {links.map((link) => (
+        <li>
+          <a class="navlink" href={link.href}>
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgb(10 14 21 / 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 24px;
+    padding-block: 10px;
+  }
+
+  .home {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap);
+    color: var(--text);
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+  }
+
+  .navlink {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--tap);
+    padding-inline: 2px;
+    color: #c9d2e0;
+    text-decoration: none;
+  }
+
+  .navlink::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 8px;
+    height: 2px;
+    background: var(--coral);
+    transition:
+      left 0.3s ease,
+      right 0.3s ease;
+  }
+
+  .navlink:hover {
+    color: var(--text);
+  }
+
+  .navlink:hover::after,
+  .navlink:focus-visible::after {
+    left: 0;
+    right: 0;
+  }
+</style>
