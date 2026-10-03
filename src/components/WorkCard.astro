@@ -1,0 +1,70 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FlowChips from './FlowChips.astro';
+
+interface Props {
+  entry: CollectionEntry<'work'>;
+}
+
+const { entry } = Astro.props;
+const { title, stackLine, card } = entry.data;
+---
+
+<article class="card work-card" data-reveal>
+  <div class="meta mono">
+    <span>ARCHITECTURE · ANONYMISED</span>
+    <span>{stackLine}</span>
+  </div>
+  <h3>{title}</h3>
+  <FlowChips items={card.flow} highlight={card.highlight} framed />
+  <ul class="points">
+    {card.points.map((point) => (
+      <li>{point}</li>
+    ))}
+  </ul>
+  <a class="textlink textlink--tap more" href={`/work/${entry.id}`}>
+    Read the case study<span class="sr-only">: {title}</span>
+    <span aria-hidden="true">&nbsp;→</span>
+  </a>
+</article>
+
+<style>
+  .work-card {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: clamp(24px, 3vw, 36px);
+    border-radius: var(--radius-lg);
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  h3 {
+    font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-2);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .more {
+    align-self: flex-start;
+    font-weight: 600;
+  }
+</style>

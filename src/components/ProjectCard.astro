@@ -1,0 +1,97 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import FlowChips from './FlowChips.astro';
+
+interface Props {
+  entry: CollectionEntry<'projects'>;
+}
+
+const { entry } = Astro.props;
+const { title, summary, image, imageAlt, flow, links, note } = entry.data;
+---
+
+<article class="card project" data-reveal>
+  {image && (
+    <div class="shot">
+      <Image
+        src={image}
+        alt={imageAlt ?? ''}
+        widths={[400, 640, 800]}
+        sizes="(min-width: 1000px) 380px, 100vw"
+        data-parallax="22"
+      />
+    </div>
+  )}
+  <div class="body">
+    <h4>{title}</h4>
+    <p class="muted">{summary}</p>
+    {flow.length > 0 && <FlowChips items={flow} size="sm" />}
+    {note && <p class="note">{note}</p>}
+    <ul class="links">
+      {links.map((link) => (
+        <li>
+          <a class="textlink textlink--tap" href={link.href}>
+            {link.label}
+            <span class="sr-only">: {title}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</article>
+
+<style>
+  .project {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .shot {
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line-2);
+  }
+
+  .shot :global(img) {
+    width: 100%;
+    height: 244px;
+    margin-top: -22px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 14px;
+    padding: 24px;
+  }
+
+  h4 {
+    font-size: 1.3125rem;
+    font-weight: 700;
+  }
+
+  .body > p {
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .note {
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 18px;
+    margin: auto 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0.875rem;
+  }
+</style>

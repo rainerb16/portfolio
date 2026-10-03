@@ -1,0 +1,35 @@
+---
+import Icon from './Icon.astro';
+import type { Capability } from '../data/capabilities';
+
+interface Props {
+  item: Capability;
+  tone: 'blue' | 'coral';
+}
+
+const { item, tone } = Astro.props;
+---
+
+<article class="card capability" data-reveal>
+  <Icon name={item.icon} tone={tone} />
+  <h3>{item.title}</h3>
+  <p class="muted">{item.text}</p>
+</article>
+
+<style>
+  .capability {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px;
+  }
+
+  h3 {
+    font-size: 1.375rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 0.9375rem;
+  }
+</style>

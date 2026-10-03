@@ -1,0 +1,47 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Old pages from the previous site.
+[[redirects]]
+  from = "/portfolio"
+  to = "/#work"
+  status = 301
+
+[[redirects]]
+  from = "/writing"
+  to = "/#work"
+  status = 301
+
+[[redirects]]
+  from = "/about"
+  to = "/#about"
+  status = 301
+
+[[redirects]]
+  from = "/contact"
+  to = "/#elsewhere"
+  status = 301
+
+[[redirects]]
+  from = "/resume"
+  to = "/"
+  status = 301
+
+# Script and style hashes are set per page by Astro (security.csp).
+# These headers cover what a <meta> policy can't.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

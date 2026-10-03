@@ -1,0 +1,570 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHead from '../components/SectionHead.astro';
+import CapabilityCard from '../components/CapabilityCard.astro';
+import WorkCard from '../components/WorkCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import HeroStack from '../components/hero/HeroStack.vue';
+import { layers } from '../data/layers';
+import { profile } from '../data/profile';
+import { businessSide, systemsSide } from '../data/capabilities';
+import portrait from '../assets/rainer-setup.jpeg';
+
+const work = (await getCollection('work')).sort((a, b) => a.data.order - b.data.order);
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const builds = projects.filter((p) => p.data.kind === 'build');
+const experiments = projects.filter((p) => p.data.kind === 'experiment');
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.fullName,
+  jobTitle: 'Business Automation Specialist',
+  description: profile.description,
+  url: profile.siteUrl,
+  email: `mailto:${profile.email}`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Calgary',
+    addressRegion: 'AB',
+    addressCountry: 'CA',
+  },
+  sameAs: [profile.links.github, profile.links.linkedin],
+  knowsAbout: ['Business process improvement', 'System design', 'Integrations', 'Automation', 'Azure'],
+};
+---
+
+<BaseLayout
+  title="Rainer B. · Business automation and system design"
+  description={profile.description}
+  ogImage="/og/home.png"
+  jsonLd={jsonLd}
+>
+  <section id="top" class="hero">
+    <HeroStack client:load layers={layers} />
+    <div class="hero-scrim" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="hero-kicker mono" data-hero>
+          [ rainer b. ] · calgary, ab
+        </p>
+        <h1 data-hero>
+          I design the systems that connect <span class="blue">people</span>, <span class="blue">data</span>{' '}
+          and <span class="coral">processes</span>.
+        </h1>
+        <p class="lead" data-hero>
+          Business Automation Specialist and full-stack developer. I improve business processes, document
+          them, and build the integrations and platforms behind them. I'm working toward software and cloud
+          architecture.
+        </p>
+        <div class="actions" data-hero>
+          <a class="btn btn--primary" href="#work">
+            See selected work
+          </a>
+          <a class="btn btn--ghost" href="#about">
+            About me
+          </a>
+        </div>
+        <p class="focus mono" data-hero>
+          <span class="dot" aria-hidden="true"></span>currently focused on
+          <span class="focus-value">software &amp; cloud architecture · Azure</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach" class="section" aria-labelledby="approach-title">
+    <div class="container stack gap-56">
+      <SectionHead
+        id="approach-title"
+        eyebrow="01 / what I do now"
+        title="Business processes and the systems behind them."
+        intro="My role covers both business process and software: how the work gets done, and the systems that support it."
+      />
+      <div class="stack gap-40">
+        <div class="stack gap-16">
+          <p class="side-label mono" data-reveal>
+            <span aria-hidden="true"></span>the business side
+          </p>
+          <div class="card-grid">
+            {businessSide.map((item) => (
+              <CapabilityCard item={item} tone="coral" />
+            ))}
+          </div>
+        </div>
+        <div class="stack gap-16">
+          <p class="side-label side-label--blue mono" data-reveal>
+            <span aria-hidden="true"></span>the systems side
+          </p>
+          <div class="card-grid">
+            {systemsSide.map((item) => (
+              <CapabilityCard item={item} tone="blue" />
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="learning" data-reveal>
+        <p class="mono muted">
+          currently learning<span aria-hidden="true"> →</span>
+        </p>
+        <ul class="pills">
+          {profile.learning.map((topic) => (
+            <li>{topic}</li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="section" aria-labelledby="work-title">
+    <div class="container stack gap-56">
+      <SectionHead
+        id="work-title"
+        eyebrow="02 / selected work"
+        title="Systems I've designed."
+        intro="Work projects show the design and decisions only. No code or company data."
+      />
+      <div class="card-grid work-grid">
+        {work.map((entry) => (
+          <WorkCard entry={entry} />
+        ))}
+      </div>
+
+      <div class="builds-head" data-reveal>
+        <h3 id="builds">Personal builds</h3>
+        <a class="textlink textlink--tap mono" href={profile.links.github}>
+          all code on GitHub<span aria-hidden="true">&nbsp;↗</span>
+        </a>
+      </div>
+      <div class="card-grid">
+        {builds.map((entry) => (
+          <ProjectCard entry={entry} />
+        ))}
+        <article class="next-build" data-reveal>
+          <p class="mono eyebrow--blue">NEXT BUILD · IN PLANNING</p>
+          <h4>An app built and deployed on Azure</h4>
+          <p class="muted">Static Web Apps, Functions and PostgreSQL, set up with infrastructure as code.</p>
+        </article>
+      </div>
+
+      <div class="experiments" data-reveal>
+        <h3 class="mono muted experiments-title">more experiments</h3>
+        <ul>
+          {experiments.map((entry) => (
+            <li>
+              <a class="row-link" href={entry.data.links[0]?.href}>
+                <span class="row-title">{entry.data.title}</span>
+                <span class="row-summary muted">{entry.data.summary}</span>
+                <span class="row-stack mono muted">
+                  {entry.data.stackLine}
+                  <span aria-hidden="true"> ↗</span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section" aria-labelledby="about-title">
+    <div class="container about">
+      <div class="portrait" data-reveal>
+        <div class="portrait-frame" data-parallax="-30" aria-hidden="true"></div>
+        <Image
+          src={portrait}
+          alt="Rainer at a desk with a computer and music gear"
+          widths={[400, 640, 880]}
+          sizes="(min-width: 1000px) 440px, 100vw"
+        />
+      </div>
+      <div class="about-text stack gap-22" data-reveal>
+        <p class="eyebrow">03 / about</p>
+        <h2 id="about-title" data-split>
+          Hey, I'm Rainer.
+        </h2>
+        <p>
+          I'm a Business Automation Specialist and full-stack developer in Calgary. I map business processes,
+          work with our software vendors to get more out of their platforms, and build the integrations and
+          internal tools that automate the work. Before this I built front-ends at Evans Hunt for clients
+          including the Calgary Stampede, United Way and Ikon Pass.
+        </p>
+        <p>I'm currently studying software and cloud architecture on Azure.</p>
+        <p>Outside of work I produce electronic music and work as an audio engineer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="elsewhere" class="section section--last" aria-labelledby="elsewhere-title">
+    <div class="container elsewhere" data-reveal>
+      <div class="stack gap-16">
+        <p class="eyebrow">04 / elsewhere</p>
+        <h2 id="elsewhere-title" data-split>
+          Find me around the web.
+        </h2>
+      </div>
+      <ul class="elsewhere-links">
+        <li>
+          <a class="btn btn--ghost" href={profile.links.github}>
+            GitHub<span aria-hidden="true">&nbsp;↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="btn btn--ghost" href={profile.links.linkedin}>
+            LinkedIn<span aria-hidden="true">&nbsp;↗</span>
+          </a>
+        </li>
+        <li>
+          <a class="btn btn--ghost" href={`mailto:${profile.email}`}>
+            Email
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .gap-16 {
+    gap: 16px;
+  }
+  .gap-22 {
+    gap: 22px;
+  }
+  .gap-40 {
+    gap: 40px;
+  }
+  .gap-56 {
+    gap: 56px;
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 820px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .hero-scrim,
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .hero-scrim {
+    background: linear-gradient(
+      90deg,
+      rgb(10 14 21 / 0.94) 0%,
+      rgb(10 14 21 / 0.72) 42%,
+      rgb(10 14 21 / 0.05) 75%
+    );
+  }
+
+  .hero-grid {
+    background-image:
+      linear-gradient(#141b29 1px, transparent 1px), linear-gradient(90deg, #141b29 1px, transparent 1px);
+    background-size: 64px 64px;
+    opacity: 0.35;
+    mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-block: 96px;
+    pointer-events: none;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 660px;
+    pointer-events: auto;
+  }
+
+  .hero-kicker {
+    font-size: 0.875rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+
+  h1 {
+    font-size: clamp(2.625rem, 6.4vw, 5rem);
+    font-weight: 800;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+  }
+
+  .blue {
+    color: var(--blue);
+  }
+
+  .coral {
+    color: var(--coral);
+  }
+
+  .hero .lead {
+    max-width: 560px;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .focus {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    padding-top: 8px;
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 12px var(--blue);
+  }
+
+  .focus-value {
+    color: var(--text);
+  }
+
+  @media (max-width: 960px) {
+    .hero {
+      flex-direction: column;
+      align-items: stretch;
+      min-height: 0;
+    }
+
+    .hero-scrim,
+    .hero-grid {
+      display: none;
+    }
+
+    .hero-content {
+      order: 1;
+      padding-block: 72px 8px;
+    }
+  }
+
+  /* What I do now */
+  .side-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8125rem;
+    color: var(--coral);
+  }
+
+  .side-label span {
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .side-label--blue {
+    color: var(--blue);
+  }
+
+  .learning {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    padding: 22px 26px;
+    border: 1px dashed var(--line-3);
+    border-radius: 16px;
+    font-size: 0.8125rem;
+  }
+
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pills li {
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: var(--blue-bg);
+    color: var(--blue-soft);
+    font-size: 0.875rem;
+  }
+
+  /* Work */
+  .work-grid {
+    --card-min: 340px;
+    gap: 24px;
+  }
+
+  .builds-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding-top: 24px;
+  }
+
+  .builds-head h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    scroll-margin-top: 96px;
+  }
+
+  .builds-head a {
+    font-size: 0.875rem;
+  }
+
+  .next-build {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+    min-height: 280px;
+    padding: 28px;
+    border: 1px dashed var(--line-3);
+    border-radius: var(--radius);
+  }
+
+  .next-build p:first-child {
+    font-size: 0.75rem;
+    color: var(--blue);
+  }
+
+  .next-build h4 {
+    font-size: 1.3125rem;
+    font-weight: 700;
+  }
+
+  .experiments-title {
+    margin-bottom: 8px;
+    font-size: 0.8125rem;
+    font-weight: 400;
+  }
+
+  .experiments ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid var(--line-2);
+  }
+
+  .row-link {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px 24px;
+    min-height: var(--tap);
+    padding: 16px 12px;
+    border-top: 1px solid var(--line-2);
+    color: var(--text);
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+
+  .row-link:hover {
+    background: var(--surface);
+    color: var(--text);
+  }
+
+  .row-title {
+    font-weight: 600;
+  }
+
+  .row-summary {
+    flex: 1 1 260px;
+  }
+
+  .row-stack {
+    font-size: 0.8125rem;
+  }
+
+  /* About */
+  .about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .portrait {
+    position: relative;
+    flex: 1 1 320px;
+    max-width: 440px;
+  }
+
+  .portrait-frame {
+    position: absolute;
+    inset: 18px -18px -18px 18px;
+    border: 1px solid var(--coral);
+    border-radius: var(--radius-lg);
+  }
+
+  .portrait :global(img) {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+  }
+
+  .about-text {
+    flex: 999 1 420px;
+    max-width: 640px;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-2);
+  }
+
+  .about-text h2,
+  .elsewhere h2 {
+    color: var(--text);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  /* Elsewhere */
+  .section--last {
+    border-bottom: 0;
+  }
+
+  .elsewhere {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 28px;
+  }
+
+  .elsewhere-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+</style>
